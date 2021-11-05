@@ -2,29 +2,47 @@ package objetos;
 
 public class Equipo {
 
-	private String nombre;
-	private String pais;
+	private Liga liga;
+	private int idEquipo;
+	private String nombreEquipo;
+	private String estadio;
 	
-	public Equipo(String nombre, String pais) {
+	
+	public Equipo(Liga liga, int idEquipo, String nombreEquipo, String estadio) {
 		super();
-		this.nombre = nombre;
-		this.pais = pais;
+		this.liga = liga;
+		this.idEquipo = idEquipo;
+		this.nombreEquipo = nombreEquipo;
+		this.estadio = estadio;
 	}
-	public String getNombre() {
-		return nombre;
+	public Liga getLiga() {
+		return liga;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setLiga(Liga liga) {
+		this.liga = liga;
 	}
-	public String getPais() {
-		return pais;
+	public int getIdEquipo() {
+		return idEquipo;
 	}
-	public void setPais(String pais) {
-		this.pais = pais;
+	public void setIdEquipo(int idEquipo) {
+		this.idEquipo = idEquipo;
+	}
+	public String getNombreEquipo() {
+		return nombreEquipo;
+	}
+	public void setNombreEquipo(String nombreEquipo) {
+		this.nombreEquipo = nombreEquipo;
+	}
+	public String getEstadio() {
+		return estadio;
+	}
+	public void setEstadio(String estadio) {
+		this.estadio = estadio;
 	}
 	@Override
 	public String toString() {
-		return nombre + ";"+pais;
+		return "Equipo [liga=" + liga + ", idEquipo=" + idEquipo + ", nombreEquipo=" + nombreEquipo + ", estadio="
+				+ estadio + "]";
 	}
 	
 	
