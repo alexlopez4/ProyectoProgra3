@@ -40,7 +40,7 @@ public class Usuario extends Persona implements Admin{
 
 	@Override
 	public String toString() {
-		return this.getNombre()+this.getEdad()+nombreDeUsuario + contraseña;
+		return this.getNombre()+" " +this.getEdad()+" "+nombreDeUsuario+ " "+ contraseña;
 	}
 
 

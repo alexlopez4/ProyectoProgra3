@@ -5,15 +5,13 @@ public class SalaDebate {
 	private Liga liga;
 	private int idSalaDebate;
 	private String temaDebate;
-	private String texto;
 	
-	public SalaDebate(Usuario usuario, Liga liga, int idSalaDebate, String temaDebate, String texto) {
+	public SalaDebate(Usuario usuario, Liga liga, int idSalaDebate, String temaDebate) {
 		super();
 		this.usuario = usuario;
 		this.liga = liga;
 		this.idSalaDebate = idSalaDebate;
-		this.temaDebate = temaDebate;
-		this.texto = texto;
+		this.temaDebate=temaDebate;
 	}
 
 	public Usuario getUsuario() {
@@ -44,25 +42,15 @@ public class SalaDebate {
 		return temaDebate;
 	}
 
-	public void setTemaDebate(String temaDebate) {
+	public void setIdSalaDebate(String temaDebate) {
 		this.temaDebate = temaDebate;
 	}
+	
 
-	public String getTexto() {
-		return texto;
-	}
-
-	public void setTexto(String texto) {
-		this.texto = texto;
-	}
 
 	@Override
 	public String toString() {
-		return "SalaDebate [usuario=" + usuario + ", liga=" + liga + ", IdSalaDebate=" + idSalaDebate + ", temaDebate="
-				+ temaDebate + ", texto=" + texto + "]";
+		return temaDebate;
 	}
-	
-	
-	
 
 }

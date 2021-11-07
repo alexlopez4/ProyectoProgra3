@@ -10,7 +10,12 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
+import db.SelectUser;
+import objetos.Usuario;
+
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class Login extends JFrame {
@@ -63,12 +68,35 @@ public class Login extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String textoUsuario = txtusuario.getText();
 				String passwordTexto= passwordField.getText();
+				String sentencia = "SELECT NOMBREUSUARIO, NOMBRE, EDAD, PSSW FROM usuario";
+				ArrayList<Usuario> listaUsuarios = SelectUser.getUser(sentencia);
+				
 				if (passwordTexto.equals("") ||textoUsuario.equals("")){
 					JOptionPane.showMessageDialog(Login.this, "No dejes ningún campo vacio");
 				}
 				else{
-					if (passwordTexto.equals("Admin") || textoUsuario.equals("Admin")){
-						
+					Usuario u = null;
+					boolean UsuarioCorrecto=false;
+					for (Usuario a: listaUsuarios){
+					if (a.getNombreDeUsuario().equals(passwordTexto) || a.getContraseña().equals(passwordTexto)){
+						UsuarioCorrecto=true;
+						u = a;
+					}
+}
+					if (UsuarioCorrecto){
+						boolean esAdmin=u.esAdmin();
+						if (esAdmin){
+							AdminVentana admin= new AdminVentana();
+							admin.setVisible(true);
+							Login.this.setVisible(false);
+						}
+						else{
+							Menu entradaMenu = new Menu(u);
+							entradaMenu.setVisible(true);
+							Login.this.setVisible(false);
+						}
+					} else{
+						JOptionPane.showMessageDialog(Login.this, "Usuario o contraseña Incorrectas");
 					}
 				}
 			}
@@ -80,6 +108,6 @@ public class Login extends JFrame {
 		btnRegistrarse.setBounds(15, 109, 115, 29);
 		contentPane.add(btnRegistrarse);
 		
-		
 	}
+	
 }
