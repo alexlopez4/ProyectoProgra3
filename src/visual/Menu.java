@@ -32,8 +32,21 @@ public class Menu extends JFrame {
 				Menu.this.setVisible(false);
 			}
 		});
+		
+		JButton btnNoticias = new JButton("Noticias");
+		btnNoticias.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PantallaNoticia pantalla = new PantallaNoticia(usuario);
+				pantalla.setVisible(true);
+				Menu.this.setVisible(false);
+			}
+		});
+		
 		btnSalasDeDebate.setBounds(35, 72, 145, 29);
 		contentPane.add(btnSalasDeDebate);
+		
+		btnNoticias.setBounds(250, 72, 145, 29);
+		contentPane.add(btnNoticias);	
 		
 		
 	}

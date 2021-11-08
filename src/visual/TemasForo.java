@@ -57,8 +57,19 @@ public class TemasForo extends JFrame {
 				
 			}
 		});
-		btnNewButton.setBounds(313, 54, 100, 29);
+		btnNewButton.setBounds(317, 86, 100, 29);
 		contentPane.add(btnNewButton);
+		
+		JButton btnAadir = new JButton("A\u00F1adir");
+		btnAadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TemaNuevo tm = new TemaNuevo(user, liga);
+				tm.setVisible(true);
+				TemasForo.this.setVisible(false);
+			}
+		});
+		btnAadir.setBounds(317, 148, 100, 29);
+		contentPane.add(btnAadir);
 		
 	}
 }
