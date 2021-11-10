@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class NewMessage {
+public class InsertNewMessage {
 
 	 private static Connection connect()
 	    {

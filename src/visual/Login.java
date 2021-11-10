@@ -17,6 +17,12 @@ import objetos.Usuario;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.Color;
+import java.awt.SystemColor;
+import javax.swing.UIManager;
 
 public class Login extends JFrame {
 
@@ -48,19 +54,20 @@ public class Login extends JFrame {
 	 */
 	public Login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 590, 401);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(135, 206, 235));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		txtusuario = new JTextField();
-		txtusuario.setBounds(171, 56, 146, 26);
+		txtusuario.setBounds(190, 110, 329, 26);
 		contentPane.add(txtusuario);
 		txtusuario.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(171, 110, 146, 26);
+		passwordField.setBounds(190, 194, 329, 26);
 		contentPane.add(passwordField);
 		
 		JButton btnNewButton = new JButton("Login");
@@ -101,13 +108,28 @@ public class Login extends JFrame {
 				}
 			}
 		});
-		btnNewButton.setBounds(15, 66, 115, 29);
+		btnNewButton.setBounds(33, 255, 501, 29);
 		contentPane.add(btnNewButton);
 		
 		btnRegistrarse = new JButton("Registrarse");
-		btnRegistrarse.setBounds(15, 109, 115, 29);
+		btnRegistrarse.setBounds(33, 300, 501, 29);
 		contentPane.add(btnRegistrarse);
 		
+		JLabel lblUsuario = new JLabel("Usuario:");
+		lblUsuario.setFont(new Font("Stencil", Font.PLAIN, 25));
+		lblUsuario.setBounds(15, 112, 123, 23);
+		contentPane.add(lblUsuario);
+		
+		JLabel lblContrasea = new JLabel("Contrase\u00F1a:");
+		lblContrasea.setFont(new Font("Stencil", Font.PLAIN, 25));
+		lblContrasea.setBounds(15, 196, 170, 23);
+		contentPane.add(lblContrasea);
+		
+		JLabel lblInico = new JLabel("Inicio");
+		lblInico.setFont(new Font("Stencil", Font.PLAIN, 73));
+		lblInico.setHorizontalAlignment(SwingConstants.CENTER);
+		lblInico.setBounds(171, 16, 231, 67);
+		contentPane.add(lblInico);
+		
 	}
-	
 }

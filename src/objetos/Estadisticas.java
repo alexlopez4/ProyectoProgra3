@@ -1,5 +1,7 @@
 package objetos;
 
+import java.util.ArrayList;
+
 public class Estadisticas extends Jugador{
 
 	private Temporada temporada;
@@ -67,6 +69,30 @@ public class Estadisticas extends Jugador{
 	public void setTarjetasRojas(int tarjetasRojas) {
 		this.tarjetasRojas = tarjetasRojas;
 	}
+	public static int getMaximoGoleador(ArrayList <Estadisticas> arrayEstadisticas){
+		int iD = 0;
+		int goles = 0;
+		for (Estadisticas es: arrayEstadisticas){
+			if (es.getGoles()>goles){
+				goles = es.getGoles();
+				iD = es.getIdJugador();
+			}
+		}
+		return iD;
+		
+	}
+	public static int getMaximoAsistente(ArrayList <Estadisticas> arrayEstadisticas){
+		int iDAsistente = 0;
+		int asistencias=0;
+		for (Estadisticas es: arrayEstadisticas){
+			if (es.getAsistencias()>asistencias){
+				asistencias = es.getAsistencias();
+				iDAsistente = es.getIdJugador();
+			}
+		}
+		return iDAsistente;
+	}
+		
 
 	@Override
 	public String toString() {

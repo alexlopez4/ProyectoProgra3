@@ -41,8 +41,7 @@ public class Equipo {
 	}
 	@Override
 	public String toString() {
-		return "Equipo [liga=" + liga + ", idEquipo=" + idEquipo + ", nombreEquipo=" + nombreEquipo + ", estadio="
-				+ estadio + "]";
+		return nombreEquipo;
 	}
 	
 	

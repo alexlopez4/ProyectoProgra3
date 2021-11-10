@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class NewForo {
+public class InsertNewForo {
 
 	 private static Connection connect()
 	    {

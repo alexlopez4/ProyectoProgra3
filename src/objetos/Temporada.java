@@ -19,7 +19,7 @@ public class Temporada {
 
 	@Override
 	public String toString() {
-		return "Temporada [edicion=" + edicion + "]";
+		return edicion;
 	}
 	
 	

@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import db.NewForo;
+import db.InsertNewForo;
 import objetos.Liga;
 import objetos.Usuario;
 
@@ -42,7 +42,7 @@ public class TemaNuevo extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String tema = textField.getText();
 				int idLiga = liga.getIdLiga();
-				NewForo.insertTema(tema, idLiga);
+				InsertNewForo.insertTema(tema, idLiga);
 				TemasForo tm = new TemasForo(liga, usuario);
 				tm.setVisible(true);
 				TemaNuevo.this.setVisible(false);

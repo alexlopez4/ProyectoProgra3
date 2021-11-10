@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-import db.NewMessage;
+import db.InsertNewMessage;
 import db.SelectForo;
 import objetos.RegistroMensajes;
 import objetos.SalaDebate;
@@ -81,7 +81,7 @@ public class Foro extends JFrame {
 				String mensaje = textField.getText();
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 				String fecha = dtf.format(LocalDateTime.now());
-				NewMessage.insertMensaje(nombreUsuario,idSalaDebate,mensaje,fecha);
+				InsertNewMessage.insertMensaje(nombreUsuario,idSalaDebate,mensaje,fecha);
 				
 				ArrayList<RegistroMensajes> rm = SelectForo.getForo(sql);
 				String texto ="";
