@@ -15,6 +15,10 @@ import objetos.Temporada;
 
 public class SelectEstadisticas {
 
+	/** Establece la conexión con la base de datos
+	 * 
+	 * @return conn, la conexion que se establece con el DriverManager
+	 */
 	private static Connection connect(){
 		String url = "jdbc:sqlite:Proyect.db";
 		Connection conn=null;
@@ -27,6 +31,12 @@ public class SelectEstadisticas {
 		return conn;
 		}
 	
+	/**Este método sirve para obtener todas las estadísticas que se indiquen mediante la consulta sql
+	 * que se le pasa por parametro
+	 * 
+	 * @param sql, consulta a realizar
+	 * @return arrayList con las estadisticas que responden a la consulta sql realizada
+	 */
 	public static ArrayList<Estadisticas> getEstadisticasJugador(String sql){
 		ArrayList<Estadisticas> arrayEstadis= new ArrayList<Estadisticas>();
 		try (Connection conn=connect();

@@ -1,11 +1,30 @@
 package objetos;
 
+/** Representa un periódico dentro de la App
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
 public class Periodico{
 
+	/** El identificador del periódico
+	 */
 	private int idPeriodico;
+	
+	/** El nombre del periódico
+	 */
 	private String nombrePeriodico;
+	
+	/** El país donde se encuentra la sede del periódico
+	 */
 	private String pais;
 	
+	/** Es el constructor de la clase periódico, que permite crear una instancia del objeto
+	 * 
+	 * @param idPeriodico La identificacion del periodico
+	 * @param nombrePeriodico El nombre del periodico
+	 * @param pais El pais de origen del periodico
+	 */
 	public Periodico(int idPeriodico, String nombrePeriodico, String pais) {
 		super();
 		this.idPeriodico = idPeriodico;

@@ -12,6 +12,10 @@ import objetos.Liga;
 
 public class SelectCampeones {
 
+	/** Establece la conexión con la base de datos
+	 * 
+	 * @return conn, la conexion que se establece con el DriverManager
+	 */
 	private static Connection connect(){
 	String url = "jdbc:sqlite:Proyect.db";
 	Connection conn=null;
@@ -24,6 +28,11 @@ public class SelectCampeones {
 	return conn;
 	}
 	
+	/** Este método permite obtener mediante una consulta indicada por parametro al equipo que se desee,
+	 * nosotros lo hemos empleado para obtener a los campeones de cada una de las ligas
+	 * @param sql la sentencia sql
+	 * @return el equipo que se quiere obtener
+	 */
 	public static Equipo getCampeon(String sql){
 		Equipo campeon = null;
 		try (Connection conn=connect();

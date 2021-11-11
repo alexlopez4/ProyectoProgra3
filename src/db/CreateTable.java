@@ -7,6 +7,11 @@ import java.sql.Statement;
 
 public class CreateTable {
 
+	/** Es un método que permite la creación de las tablas mediante una sql que se le pasa
+	 * por parametro
+	 * 
+	 * @param sql sentencia que permite la creación de las tablas
+	 */
 	public static void createNewTable(String sql){
 		String name="Proyect.db";
 		String url="jdbc:sqlite:"+name;

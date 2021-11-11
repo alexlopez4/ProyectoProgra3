@@ -7,6 +7,10 @@ import java.sql.SQLException;
 
 public class CreateDB {
 
+	/** Es un metodo que permite crear la nueva base de datos y establecer conexión con el DriverManager
+	 * 
+	 * @param fileName es el nombre de la base de datos que se quiere crear
+	 */
 	 public static void createNewDatabase(String fileName)
 	    {
 		 String url = "jdbc:sqlite:"+ fileName; 

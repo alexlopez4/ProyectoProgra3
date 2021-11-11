@@ -57,6 +57,18 @@ public class MenuForos extends JFrame {
 		btnVerTemas.setBounds(298, 65, 115, 29);
 		contentPane.add(btnVerTemas);
 		
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Menu m = new Menu (u);
+				m.setVisible(true);
+				MenuForos.this.setVisible(false);
+				
+			}
+		});
+		btnVolver.setBounds(298, 126, 115, 29);
+		contentPane.add(btnVolver);
+		
 		
 	}
 	

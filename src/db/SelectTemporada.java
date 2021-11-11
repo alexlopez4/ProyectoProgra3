@@ -15,6 +15,11 @@ import objetos.Usuario;
 
 public class SelectTemporada {
 
+	
+	/** Establece la conexión con la base de datos
+	 * 
+	 * @return conn, la conexion que se establece con el DriverManager
+	 */
 	private static Connection connect(){
 		String url = "jdbc:sqlite:Proyect.db";
 		Connection con = null;

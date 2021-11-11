@@ -68,8 +68,19 @@ public class TemasForo extends JFrame {
 				TemasForo.this.setVisible(false);
 			}
 		});
-		btnAadir.setBounds(317, 148, 100, 29);
+		btnAadir.setBounds(317, 131, 100, 29);
 		contentPane.add(btnAadir);
+		
+		JButton btnVolverAln = new JButton("Volver");
+		btnVolverAln.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MenuForos m = new MenuForos (user);
+				m.setVisible(true);
+				TemasForo.this.setVisible(false);
+			}
+		});
+		btnVolverAln.setBounds(317, 176, 100, 29);
+		contentPane.add(btnVolverAln);
 		
 	}
 }
