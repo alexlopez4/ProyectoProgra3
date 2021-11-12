@@ -75,11 +75,24 @@ public class Jugador extends Persona{
 	
 	/** Establece o modifica el precio del jugador
 	 * 
-	 * @param nuevo precio
+	 * @param precioEnMillones, nuevo precio
 	 */
 	public void setPrecioEnMillones(int precioEnMillones) {
 		this.precioEnMillones = precioEnMillones;
 	}
+	
+	public static int Millones (int u){
+			if (u<0){
+				return 0;
+			}else{
+			return u;
+			}
+		}
+	
+	
+		
+	
+	
 	@Override
 	public String toString() {
 		return "Jugador [equipo=" + equipo + ", IdJugador=" + idJugador + ", precioEnMillones=" + precioEnMillones

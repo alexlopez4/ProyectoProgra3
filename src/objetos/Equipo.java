@@ -1,5 +1,7 @@
 package objetos;
 
+import java.util.ArrayList;
+
 /** Representa un equipo de una liga
  * @author Alex Lopez de Lacalle and Giovanni Locatelli 
  * @version 1.0
@@ -95,6 +97,22 @@ public class Equipo {
 	 */
 	public void setEstadio(String estadio) {
 		this.estadio = estadio;
+	}
+	
+	/** Metodo que permite calcular el precio medio de los jugadores de un equipo
+	 * 
+	 * @param jugadores arrayList con los jugadores
+	 * @param numeroJugadores numero de jugadores en el equipo
+	 * @return media de precio
+	 */
+	public static double mediaPrecioEquipo (ArrayList<Jugador> jugadores, int numeroJugadores){
+		int precioEquipo=0;
+		for (Jugador player: jugadores){
+			int precioJugador= player.getPrecioEnMillones();
+			precioEquipo=precioEquipo + precioJugador;
+		}
+		double media = precioEquipo/numeroJugadores;
+		return media;
 	}
 	
 	/** Al realizar un syso del objeto devuelve el nombre del equipo

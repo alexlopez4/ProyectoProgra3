@@ -73,7 +73,7 @@ public class PantallaNoticia extends JFrame {
 			}
 			}
 		});
-		btnSaberMas.setBounds(88, 413, 609, 29);
+		btnSaberMas.setBounds(88, 413, 236, 29);
 		contentPane.add(btnSaberMas);
 		
 		txtNoticias = new JTextField();
@@ -84,6 +84,17 @@ public class PantallaNoticia extends JFrame {
 		txtNoticias.setEditable(false);
 		contentPane.add(txtNoticias);
 		txtNoticias.setColumns(10);
+		
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Menu m = new Menu(usuario);
+				m.setVisible(true);
+				PantallaNoticia.this.setVisible(false);
+			}
+		});
+		btnVolver.setBounds(426, 413, 236, 29);
+		contentPane.add(btnVolver);
 	
 	
 	}

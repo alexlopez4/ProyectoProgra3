@@ -112,6 +112,14 @@ public class Login extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Registrarse r = new Registrarse();
+				r.setVisible(true);
+				Login.this.setVisible(false);
+				
+			}
+		});
 		btnRegistrarse.setBounds(33, 300, 501, 29);
 		contentPane.add(btnRegistrarse);
 		

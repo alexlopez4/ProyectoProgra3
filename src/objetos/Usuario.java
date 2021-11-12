@@ -59,6 +59,16 @@ public class Usuario extends Persona implements IAdmin{
 		}
 		return EsElAdministrador;
 	}
+	
+	/** Metodo que comprueba si la constraseña es un espacio y en el caso que sea elimina el usuario
+	 * 
+	 * @param u Usuario que se le pasa al metodo
+	 */
+	public static void Contrasena (Usuario u){
+		if ( u.getContraseña().equals(" ")){
+			u= null;
+		}
+	}
 
 	@Override
 	public String toString() {

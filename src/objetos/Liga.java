@@ -1,5 +1,7 @@
 package objetos;
 
+import java.util.ArrayList;
+
 /** Representa una liga dentro de la aplicación
  * @author Alex Lopez de Lacalle and Giovanni Locatelli 
  * @version 1.0
@@ -80,6 +82,16 @@ public class Liga {
 	 */
 	public void setPais(String pais) {
 		this.pais = pais;
+	}
+	
+	public static void LigaDuplicada(Liga u , ArrayList<Liga> a){
+			
+			for (Liga z:a){
+				if (u.getNombreLiga().equals(z.getNombreLiga())){
+					System.out.println(z.getNombreLiga());
+					z=null;
+				}
+			}
 	}
 
 	@Override

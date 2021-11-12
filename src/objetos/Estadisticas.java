@@ -48,8 +48,8 @@ public class Estadisticas extends Jugador{
 	 * @param tarjetasAmarillas Indica el numero de tarjetas que le han mostrado a un jugador 
 	 * @param tarjetasRojas Indica el numero de tarjetas rojas que le han mostrado a un jugador
 	 */
-	public Estadisticas(String nombre, int edad, Equipo equipo, int idJugador, int precioEnMillones, Temporada temporada, int idEstadisticas,
-			int goles, int asistencias, int tarjetasAmarillas, int tarjetasRojas) {
+	public Estadisticas(String nombre, int edad, Equipo equipo, int idJugador, int precioEnMillones, 
+			Temporada temporada, int idEstadisticas,int goles, int asistencias, int tarjetasAmarillas, int tarjetasRojas) {
 		super( nombre, edad, equipo,idJugador, precioEnMillones);
 		this.temporada = temporada;
 		this.idEstadisticas = idEstadisticas;
