@@ -39,7 +39,7 @@ public class Menu extends JFrame {
 		JSeparator separator2 = new JSeparator();
 
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(449, 16, 357, 51);
+		menuBar.setBounds(416, 16, 400, 51);
 		contentPane.add(menuBar);
 		
 		JMenu mnNewMenu1 = new JMenu("Ligas");
@@ -167,8 +167,8 @@ public class Menu extends JFrame {
 		JLabel lblFootballPage = new JLabel("Football Page");
 		lblFootballPage.setForeground(SystemColor.desktop);
 		lblFootballPage.setHorizontalAlignment(SwingConstants.CENTER);
-		lblFootballPage.setLocation(39, 16);
-		lblFootballPage.setSize(395, 51);
+		lblFootballPage.setLocation(15, 0);
+		lblFootballPage.setSize(395, 72);
 		lblFootballPage.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 48));
 		contentPane.add(lblFootballPage);
 		
