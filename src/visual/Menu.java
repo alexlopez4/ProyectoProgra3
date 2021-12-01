@@ -133,6 +133,7 @@ public class Menu extends JFrame {
 		Cerrar.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
 		Cerrar.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent e){
+		    	  Menu.this.setVisible(false);
 	            }
 	        });
 		mnNewMenu.add(Cerrar);
@@ -142,7 +143,9 @@ public class Menu extends JFrame {
 		mntmNewMenuItem_2.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
 		mntmNewMenuItem_2.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent e){
-		      
+		      InfoUser b= new InfoUser (user);
+		      b.setVisible(true);
+		      Menu.this.setVisible(false);
 		      }
         });
 		mnNewMenu4.add(mntmNewMenuItem_2);
@@ -153,7 +156,9 @@ public class Menu extends JFrame {
 		mntmNewMenuItem_1.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent e){
-		      
+		    Login a= new Login ();
+		    a.setVisible(true);
+		    Menu.this.setVisible(false);
 		      }
         });
 		
