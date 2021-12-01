@@ -85,7 +85,7 @@ public class Login extends JFrame {
 					Usuario u = null;
 					boolean UsuarioCorrecto=false;
 					for (Usuario a: listaUsuarios){
-					if (a.getNombreDeUsuario().equals(passwordTexto) || a.getContraseña().equals(passwordTexto)){
+					if (a.getNombreDeUsuario().equals(textoUsuario) && a.getContraseña().equals(passwordTexto)){
 						UsuarioCorrecto=true;
 						u = a;
 					}

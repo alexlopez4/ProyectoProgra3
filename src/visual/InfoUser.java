@@ -26,8 +26,9 @@ public class InfoUser extends JFrame {
 	 * Create the frame.
 	 * @param login 
 	 */
-	public InfoUser( objetos.Usuario user) {
-
+	public InfoUser(objetos.Usuario user) {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 838, 527);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -54,12 +55,12 @@ public class InfoUser extends JFrame {
 		lblNewLabel_2.setBounds(125, 277, 229, 42);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("");
+		JLabel lblNewLabel_3 = new JLabel(user.getNombreDeUsuario());
 		lblNewLabel_3.setFont(new Font("Times New Roman", Font.ITALIC, 23));
 		lblNewLabel_3.setBounds(397, 237, 298, 28);
 		contentPane.add(lblNewLabel_3);
 		
-		lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4 = new JLabel(user.getContraseña());
 		lblNewLabel_4.setFont(new Font("Times New Roman", Font.ITALIC, 23));
 		lblNewLabel_4.setBounds(397, 277, 310, 37);
 		contentPane.add(lblNewLabel_4);
@@ -69,6 +70,9 @@ public class InfoUser extends JFrame {
 		btnNewButton.setForeground(SystemColor.desktop);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				CambiarContrasenya nuevaContrasenya = new CambiarContrasenya(user);
+				nuevaContrasenya.setVisible(true);
+				InfoUser.this.setVisible(false);
 		}
 		});
 		btnNewButton.setFont(new Font("Bernard MT Condensed", Font.ITALIC, 20));

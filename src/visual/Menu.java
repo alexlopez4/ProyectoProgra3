@@ -27,8 +27,8 @@ public class Menu extends JFrame {
 	private JPanel contentPane;
 
 	public Menu(Usuario user) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 838, 527);
+
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -143,7 +143,7 @@ public class Menu extends JFrame {
 		mntmNewMenuItem_2.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
 		mntmNewMenuItem_2.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent e){
-		      InfoUser b= new InfoUser (user);
+		      InfoUser b= new InfoUser(user);
 		      b.setVisible(true);
 		      Menu.this.setVisible(false);
 		      }
@@ -152,7 +152,7 @@ public class Menu extends JFrame {
 
 		mnNewMenu4.add(separator);
 		
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Cambiar de Usuario");
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Cerrar sesión");
 		mntmNewMenuItem_1.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent e){
