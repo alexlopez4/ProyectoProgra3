@@ -48,6 +48,17 @@ public class Menu extends JFrame {
 		mnNewMenu1.setForeground(SystemColor.desktop);
 		menuBar.add(mnNewMenu1);
 		
+		JMenuItem equipos = new JMenuItem("Equipos");
+		equipos.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
+		equipos.addActionListener(new ActionListener() {
+		      public void actionPerformed(ActionEvent e){
+		    	  EquipoAnalisis ventanaEquipos = new EquipoAnalisis(user);
+					ventanaEquipos.setVisible(true);
+					Menu.this.setVisible(false);
+				}
+        });
+		mnNewMenu1.add(equipos);
+		
 		JMenuItem deb = new JMenuItem("Sala Debates");
 		deb.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
 		deb.addActionListener(new ActionListener() {

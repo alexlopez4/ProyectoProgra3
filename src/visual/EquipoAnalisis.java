@@ -13,6 +13,7 @@ import db.SelectJugador;
 import db.SelectLiga;
 import objetos.Equipo;
 import objetos.Liga;
+import objetos.Usuario;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
@@ -24,31 +25,15 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.ListSelectionEvent;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class EquipoAnalisis extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					EquipoAnalisis frame = new EquipoAnalisis();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public EquipoAnalisis() {
+	public EquipoAnalisis(Usuario user) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
@@ -154,6 +139,17 @@ public class EquipoAnalisis extends JFrame {
 		lblTitulosObtenidos.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblTitulosObtenidos.setBounds(516, 230, 168, 20);
 		contentPane.add(lblTitulosObtenidos);
+		
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Menu m = new Menu(user);
+				m.setVisible(true);
+				EquipoAnalisis.this.setVisible(false);
+			}
+		});
+		btnVolver.setBounds(533, 393, 184, 29);
+		contentPane.add(btnVolver);
 		
 		
 		
