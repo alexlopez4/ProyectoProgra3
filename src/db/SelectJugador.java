@@ -48,10 +48,7 @@ public class SelectJugador {
             PreparedStatement pstmt  = conn.prepareStatement(sql)
     )
     {
-
-
     		ResultSet rs  = pstmt.executeQuery();
-
     while (rs.next())
     		{
     Liga l = new Liga (rs.getInt("IDLIGA"),rs.getString("NOMBRELIGA"),rs.getString("PAIS"));
@@ -93,6 +90,29 @@ public class SelectJugador {
 			}
 			return j;
 		}
+	
+	public static int getNumeroJugadores(String sql)
+    {
+		int numeroJugadores = 0;
+    try
+    (
+    		Connection conn = connect();
+            PreparedStatement pstmt  = conn.prepareStatement(sql)
+    )
+    {
+    		ResultSet rs  = pstmt.executeQuery();
+    while (rs.next())
+    		{
+    numeroJugadores = rs.getInt("NUMEROJUGADORES");
+	
+    }
+	
+	} catch (SQLException e)
+	{
+	System.out.println(e.getMessage());
+	}
+	return numeroJugadores;
+    }
 	
 	
 
