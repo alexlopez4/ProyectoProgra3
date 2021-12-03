@@ -28,15 +28,18 @@ public class Menu extends JFrame {
 
 	public Menu(Usuario user) {
 
-
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
 		
 		JSeparator separator = new JSeparator();
 		JSeparator separator1 = new JSeparator();
 		JSeparator separator2 = new JSeparator();
+		JSeparator separator3 = new JSeparator();
 
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(416, 16, 400, 51);
@@ -116,6 +119,19 @@ public class Menu extends JFrame {
 				}
         });
 		mnNewMenu2.add(datos);
+		
+		mnNewMenu2.add(separator3);
+		
+		JMenuItem juego= new JMenuItem("Juego Jugador");
+		juego.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
+		juego.addActionListener(new ActionListener() {
+		      public void actionPerformed(ActionEvent e){
+		    	  Game game = new Game( 0, user);
+		    	  game.setVisible(true);
+		    	  Menu.this.setVisible(false);
+				}
+        });
+		mnNewMenu2.add(juego);
 		
 		
 		JMenu mnNewMenu4= new JMenu("Usuario");
