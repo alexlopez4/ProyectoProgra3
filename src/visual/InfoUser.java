@@ -92,11 +92,21 @@ public class InfoUser extends JFrame {
 		btnNewButton_1.setFont(new Font("Bernard MT Condensed", Font.ITALIC, 21));
 		btnNewButton_1.setBounds(115, 434, 562, 28);
 		contentPane.add(btnNewButton_1);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("Nombre:");
+		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2_1.setFont(new Font("Dialog", Font.ITALIC, 32));
+		lblNewLabel_2_1.setBounds(125, 175, 229, 42);
+		contentPane.add(lblNewLabel_2_1);
+		
+		JLabel lblNewLabel_3_1 = new JLabel(user.getNombre());
+		lblNewLabel_3_1.setFont(new Font("Times New Roman", Font.ITALIC, 23));
+		lblNewLabel_3_1.setBounds(397, 187, 348, 28);
+		contentPane.add(lblNewLabel_3_1);
 	}
 	
 	public void setContrasena(String c)
 	{
 		lblNewLabel_4.setText(c);
 	}
-
 }

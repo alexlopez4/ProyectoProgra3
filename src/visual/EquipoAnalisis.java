@@ -19,6 +19,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ItemEvent;
@@ -148,8 +149,23 @@ public class EquipoAnalisis extends JFrame {
 				EquipoAnalisis.this.setVisible(false);
 			}
 		});
-		btnVolver.setBounds(533, 393, 184, 29);
+		btnVolver.setBounds(533, 439, 184, 29);
 		contentPane.add(btnVolver);
+		
+		JButton btnNewButton = new JButton("Ver plantilla");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (list.getSelectedValue()==null){
+					JOptionPane.showMessageDialog(EquipoAnalisis.this,"No hay ningún equipo seleccionado");
+				}else{
+				TeamPlayers tp = new TeamPlayers((Equipo) list.getSelectedValue(), user);
+				tp.setVisible(true);
+				EquipoAnalisis.this.setVisible(false);
+				}
+			}
+		});
+		btnNewButton.setBounds(533, 394, 184, 29);
+		contentPane.add(btnNewButton);
 		
 		
 		

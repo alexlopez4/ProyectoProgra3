@@ -40,6 +40,7 @@ public class Menu extends JFrame {
 		JSeparator separator1 = new JSeparator();
 		JSeparator separator2 = new JSeparator();
 		JSeparator separator3 = new JSeparator();
+		JSeparator separator4 = new JSeparator();
 
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(416, 16, 400, 51);
@@ -61,6 +62,7 @@ public class Menu extends JFrame {
 				}
         });
 		mnNewMenu1.add(equipos);
+		mnNewMenu1.add(separator4);
 		
 		JMenuItem deb = new JMenuItem("Sala Debates");
 		deb.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
@@ -122,7 +124,7 @@ public class Menu extends JFrame {
 		
 		mnNewMenu2.add(separator3);
 		
-		JMenuItem juego= new JMenuItem("Juego Jugador");
+		JMenuItem juego= new JMenuItem("What's my value?");
 		juego.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
 		juego.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent e){
