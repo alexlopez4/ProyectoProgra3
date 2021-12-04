@@ -19,6 +19,8 @@ import objetos.Usuario;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.SwingConstants;
 
 public class Registrarse extends JFrame {
 
@@ -28,49 +30,54 @@ public class Registrarse extends JFrame {
 	private JTextField textField_2;
 	private JButton btnAceptar;
 	private JPasswordField passwordField;
+	private JLabel lblRegistrase;
 
 	public Registrarse() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
-		Registrarse.this.setVisible(true);
 		
 		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setBounds(41, 39, 69, 20);
+		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNombre.setBounds(130, 143, 107, 20);
 		contentPane.add(lblNombre);
 		
 		JLabel lblEdad = new JLabel("Edad");
-		lblEdad.setBounds(41, 75, 69, 20);
+		lblEdad.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblEdad.setBounds(130, 197, 69, 20);
 		contentPane.add(lblEdad);
 		
 		JLabel lblUsuario = new JLabel("Usuario");
-		lblUsuario.setBounds(41, 117, 69, 20);
+		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblUsuario.setBounds(130, 253, 79, 20);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a");
-		lblContrasea.setBounds(41, 153, 96, 20);
+		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblContrasea.setBounds(130, 302, 131, 20);
 		contentPane.add(lblContrasea);
 		
 		textField = new JTextField();
-		textField.setBounds(211, 36, 146, 26);
+		textField.setBounds(389, 140, 249, 26);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(211, 75, 146, 26);
+		textField_1.setBounds(389, 194, 249, 26);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(211, 114, 146, 26);
+		textField_2.setBounds(389, 250, 249, 26);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(211, 150, 146, 26);
+		passwordField.setBounds(390, 299, 248, 26);
 		contentPane.add(passwordField);
 		passwordField.setVisible(true);
 		
@@ -109,8 +116,14 @@ public class Registrarse extends JFrame {
 				}
 			}
 		});
-		btnAceptar.setBounds(36, 202, 115, 29);
+		btnAceptar.setBounds(41, 403, 695, 29);
 		contentPane.add(btnAceptar);
+		
+		lblRegistrase = new JLabel("Registrase");
+		lblRegistrase.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 50));
+		lblRegistrase.setHorizontalAlignment(SwingConstants.CENTER);
+		lblRegistrase.setBounds(123, 45, 515, 52);
+		contentPane.add(lblRegistrase);
 		
 	}
 

@@ -17,6 +17,9 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class MenuForos extends JFrame {
 
@@ -25,14 +28,17 @@ public class MenuForos extends JFrame {
 
 	
 	public MenuForos(Usuario u) {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
 		
 		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 33));
 		DefaultComboBoxModel<Liga> model = new DefaultComboBoxModel<Liga>();
 		
 		
@@ -42,7 +48,7 @@ public class MenuForos extends JFrame {
 			model.addElement(l);
 		}
 		comboBox.setModel(model);
-		comboBox.setBounds(55, 66, 137, 26);
+		comboBox.setBounds(82, 175, 618, 69);
 		contentPane.add(comboBox);
 		
 		JButton btnVerTemas = new JButton("Ver temas");
@@ -54,7 +60,7 @@ public class MenuForos extends JFrame {
 				MenuForos.this.setVisible(false);
 			}
 		});
-		btnVerTemas.setBounds(298, 65, 115, 29);
+		btnVerTemas.setBounds(82, 307, 618, 29);
 		contentPane.add(btnVerTemas);
 		
 		JButton btnVolver = new JButton("Volver");
@@ -66,8 +72,14 @@ public class MenuForos extends JFrame {
 				
 			}
 		});
-		btnVolver.setBounds(298, 126, 115, 29);
+		btnVolver.setBounds(84, 365, 616, 29);
 		contentPane.add(btnVolver);
+		
+		JLabel lblMenuForos = new JLabel("MENU FOROS");
+		lblMenuForos.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 56));
+		lblMenuForos.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMenuForos.setBounds(82, 64, 618, 63);
+		contentPane.add(lblMenuForos);
 		
 		
 	}

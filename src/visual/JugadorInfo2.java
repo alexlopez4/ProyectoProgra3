@@ -33,13 +33,12 @@ public class JugadorInfo2 extends JFrame {
 
 	public JugadorInfo2(Usuario user, Jugador j, Equipo equipo) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 715, 463);
+		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 250, 205));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
-		
 		
 		JLabel lblNombre = new JLabel("Nombre :");
 		lblNombre.setBounds(42, 114, 69, 20);

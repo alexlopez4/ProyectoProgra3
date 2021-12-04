@@ -34,10 +34,11 @@ public class PantallaJugador extends JFrame {
 
 	public PantallaJugador(Usuario user) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 735, 499);
+		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
 		
 		JList list = new JList();
@@ -117,17 +118,17 @@ public class PantallaJugador extends JFrame {
 		list_1.setModel(lista2);
 		
 		
-		list_1.setBounds(442, 126, 256, 110);
+		list_1.setBounds(485, 126, 256, 110);
 		contentPane.add(list_1);
 		
 		JLabel lblMaximosGoleadores = new JLabel("Maximos goleadores 2020/2021");
 		lblMaximosGoleadores.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMaximosGoleadores.setBounds(442, 90, 256, 20);
+		lblMaximosGoleadores.setBounds(485, 91, 256, 20);
 		contentPane.add(lblMaximosGoleadores);
 		
 		JLabel lblMaximosAsistentes = new JLabel("Maximos asistentes 2021");
 		lblMaximosAsistentes.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMaximosAsistentes.setBounds(442, 259, 256, 20);
+		lblMaximosAsistentes.setBounds(485, 254, 256, 20);
 		contentPane.add(lblMaximosAsistentes);
 		
 		JList list_2 = new JList();
@@ -156,7 +157,7 @@ public class PantallaJugador extends JFrame {
 		list_2.setModel(lista3);
 		
 		
-		list_2.setBounds(442, 290, 256, 110);
+		list_2.setBounds(485, 290, 256, 110);
 		contentPane.add(list_2);
 		
 		JButton btnNewButton_1 = new JButton("Volver");
@@ -167,7 +168,7 @@ public class PantallaJugador extends JFrame {
 				PantallaJugador.this.setVisible(false);
 			}
 		});
-		btnNewButton_1.setBounds(452, 407, 246, 29);
+		btnNewButton_1.setBounds(485, 407, 256, 29);
 		contentPane.add(btnNewButton_1);
 	
 	

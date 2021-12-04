@@ -80,7 +80,7 @@ public class TeamPlayers extends JFrame {
 				TeamPlayers.this.setVisible(false);
 			}
 		});
-		btnNewButton.setBounds(203, 414, 134, 29);
+		btnNewButton.setBounds(66, 414, 271, 29);
 		contentPane.add(btnNewButton);
 		JButton btnEstadsticas = new JButton("Estad\u00EDsticas");
 		btnEstadsticas.addActionListener(new ActionListener() {
@@ -98,7 +98,7 @@ public class TeamPlayers extends JFrame {
 				}
 			
 		});
-		btnEstadsticas.setBounds(417, 414, 134, 29);
+		btnEstadsticas.setBounds(417, 414, 274, 29);
 		contentPane.add(btnEstadsticas);
 		
 		JScrollPane scrollPane = new JScrollPane();

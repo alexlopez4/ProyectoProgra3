@@ -29,6 +29,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class EquipoAnalisis extends JFrame {
 
@@ -44,7 +45,7 @@ public class EquipoAnalisis extends JFrame {
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Verdana", Font.PLAIN, 18));
-		comboBox.setBounds(533, 116, 177, 36);
+		comboBox.setBounds(518, 112, 194, 36);
 		DefaultComboBoxModel<Liga> modelLiga = new DefaultComboBoxModel<Liga>();
 		String consulta= "SELECT IDLIGA, NOMBRELIGA, PAIS FROM liga";
 		ArrayList <Liga> listaLigas = SelectLiga.getLiga(consulta);
@@ -166,6 +167,12 @@ public class EquipoAnalisis extends JFrame {
 		});
 		btnNewButton.setBounds(533, 394, 184, 29);
 		contentPane.add(btnNewButton);
+		
+		JLabel lblEquipos = new JLabel("EQUIPOS");
+		lblEquipos.setHorizontalAlignment(SwingConstants.CENTER);
+		lblEquipos.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 50));
+		lblEquipos.setBounds(235, 16, 287, 80);
+		contentPane.add(lblEquipos);
 		
 		
 		

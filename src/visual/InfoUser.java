@@ -28,17 +28,18 @@ public class InfoUser extends JFrame {
 	 */
 	public InfoUser(objetos.Usuario user) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 838, 527);
+		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Usuario");
 		lblNewLabel.setForeground(SystemColor.desktop);
 		lblNewLabel.setFont(new Font("Bernard MT Condensed", Font.BOLD | Font.ITALIC, 83));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(258, 16, 475, 155);
+		lblNewLabel.setBounds(125, 16, 475, 155);
 		contentPane.add(lblNewLabel);
 		
 		

@@ -16,6 +16,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class CambiarContrasenya extends JFrame {
 
@@ -33,21 +35,21 @@ public class CambiarContrasenya extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNuevaContrasea = new JLabel("Nueva contrase\u00F1a");
-		lblNuevaContrasea.setBounds(122, 151, 174, 20);
+		lblNuevaContrasea.setBounds(96, 197, 197, 20);
 		contentPane.add(lblNuevaContrasea);
 		
 		JLabel lblNuevaContrasea_1 = new JLabel("Repetir nueva contraseña");
-		lblNuevaContrasea_1.setBounds(122, 211, 211, 20);
+		lblNuevaContrasea_1.setBounds(96, 254, 237, 20);
 		contentPane.add(lblNuevaContrasea_1);
 		
 		textField = new JTextField();
-		textField.setBounds(442, 148, 197, 26);
+		textField.setBounds(406, 194, 197, 26);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(442, 208, 197, 26);
+		textField_1.setBounds(406, 251, 197, 26);
 		contentPane.add(textField_1);
 		
 		JButton btnConfirmarCambios = new JButton("Confirmar cambios");
@@ -72,11 +74,17 @@ public class CambiarContrasenya extends JFrame {
 				}
 			}
 		});
-		btnConfirmarCambios.setBounds(263, 359, 252, 29);
+		btnConfirmarCambios.setBounds(92, 359, 629, 29);
 		contentPane.add(btnConfirmarCambios);
 		
 		JButton btnVolver = new JButton("Volver");
-		btnVolver.setBounds(263, 404, 252, 29);
+		btnVolver.setBounds(92, 404, 629, 29);
 		contentPane.add(btnVolver);
+		
+		JLabel lblCambiarContrasea = new JLabel("Cambiar contrase\u00F1a");
+		lblCambiarContrasea.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 50));
+		lblCambiarContrasea.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCambiarContrasea.setBounds(96, 63, 625, 57);
+		contentPane.add(lblCambiarContrasea);
 	}
 }

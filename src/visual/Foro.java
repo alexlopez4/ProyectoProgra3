@@ -22,6 +22,9 @@ import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class Foro extends JFrame {
 
@@ -34,15 +37,17 @@ public class Foro extends JFrame {
 		frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
 	    
 		
 		JTextPane textPane = new JTextPane();
-		textPane.setBounds(15, 16, 308, 160);
+		textPane.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		textPane.setBounds(15, 111, 531, 280);
 		textPane.setEditable(false);
 		
 		
@@ -69,7 +74,8 @@ public class Foro extends JFrame {
 		contentPane.add(textPane);
 		
 		textField = new JTextField();
-		textField.setBounds(15, 192, 308, 42);
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		textField.setBounds(15, 407, 531, 42);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
@@ -93,7 +99,7 @@ public class Foro extends JFrame {
 				contentPane.add(textPane);
 			}
 		});
-		btnEnviar.setBounds(338, 199, 84, 29);
+		btnEnviar.setBounds(561, 410, 202, 36);
 		contentPane.add(btnEnviar);
 		
 		JButton btnVolver = new JButton("Volver");
@@ -104,8 +110,14 @@ public class Foro extends JFrame {
 				Foro.this.setVisible(false);
 			}
 		});
-		btnVolver.setBounds(338, 147, 84, 29);
+		btnVolver.setBounds(561, 365, 202, 29);
 		contentPane.add(btnVolver);
+		
+		JLabel lblNewLabel = new JLabel("SALA DEBATE");
+		lblNewLabel.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 51));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(15, 33, 748, 55);
+		contentPane.add(lblNewLabel);
 		
 	}
 }

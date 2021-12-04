@@ -34,10 +34,11 @@ public class NoticiaInfo extends JFrame {
 
 	public NoticiaInfo(String w, Usuario usuario) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 703, 482);
+		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
 
 		String sql = "SELECT A.IDNOTICIA , A.TITULO , A.TEXTO , A.IDIOMA , A.FECHA , A.IDPERIODICO , NOMBREPERIODICO , PAIS FROM periodico D "

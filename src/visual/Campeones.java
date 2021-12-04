@@ -33,6 +33,7 @@ import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class Campeones extends JFrame {
 
@@ -43,41 +44,49 @@ public class Campeones extends JFrame {
 	private JComboBox comboBox;
 	private JComboBox comboBox_1;
 	private JButton btnVolver;
+	private JLabel lblCampeones;
 
 	
 	public Campeones(Usuario user) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
 		
 		JLabel lblCampon = new JLabel("Camp\u00E9on");
-		lblCampon.setBounds(39, 80, 69, 20);
+		lblCampon.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblCampon.setBounds(37, 206, 156, 23);
 		contentPane.add(lblCampon);
 		
 		JLabel lblMximoGoleador = new JLabel("M\u00E1ximo goleador");
-		lblMximoGoleador.setBounds(39, 125, 139, 20);
+		lblMximoGoleador.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblMximoGoleador.setBounds(37, 263, 175, 26);
 		contentPane.add(lblMximoGoleador);
 		
 		JLabel lblMximoAsistente = new JLabel("M\u00E1ximo asistente");
-		lblMximoAsistente.setBounds(39, 168, 126, 20);
+		lblMximoAsistente.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblMximoAsistente.setBounds(37, 311, 175, 23);
 		contentPane.add(lblMximoAsistente);
 		
 		tf0 = new JTextField();
-		tf0.setBounds(123, 77, 254, 26);
+		tf0.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		tf0.setBounds(227, 203, 254, 31);
 		contentPane.add(tf0);
 		tf0.setColumns(10);
 		
 		tf1 = new JTextField();
-		tf1.setBounds(193, 122, 184, 26);
+		tf1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		tf1.setBounds(227, 258, 254, 31);
 		contentPane.add(tf1);
 		tf1.setColumns(10);
 		
 		tf2 = new JTextField();
+		tf2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		
-		tf2.setBounds(193, 165, 184, 26);
+		tf2.setBounds(229, 308, 252, 31);
 		contentPane.add(tf2);
 		tf2.setColumns(10);
 		
@@ -86,8 +95,8 @@ public class Campeones extends JFrame {
 		tf2.setEditable(false);
 		
 		comboBox = new JComboBox();
-		comboBox.setFont(new Font("Bahnschrift", Font.PLAIN, 17));
-		comboBox.setBounds(312, 16, 101, 26);
+		comboBox.setFont(new Font("Bahnschrift", Font.PLAIN, 20));
+		comboBox.setBounds(499, 135, 101, 26);
 		DefaultComboBoxModel<Temporada> modelTemporada = new DefaultComboBoxModel<Temporada>();
 		ArrayList<Temporada> ediciones = SelectTemporada.getTemporada("SELECT EDICION FROM temporada ORDER BY EDICION DESC;");
 		for (Temporada t: ediciones){
@@ -97,8 +106,8 @@ public class Campeones extends JFrame {
 		contentPane.add(comboBox);
 		
 		comboBox_1 = new JComboBox();
-		comboBox_1.setFont(new Font("Bahnschrift", Font.PLAIN, 17));
-		comboBox_1.setBounds(25, 16, 151, 26);
+		comboBox_1.setFont(new Font("Bahnschrift", Font.PLAIN, 20));
+		comboBox_1.setBounds(37, 135, 233, 26);
 		DefaultComboBoxModel<Liga> modelLiga = new DefaultComboBoxModel<Liga>();
 		String consulta= "SELECT IDLIGA, NOMBRELIGA, PAIS FROM liga";
 		ArrayList <Liga> listaLigas = SelectLiga.getLiga(consulta);
@@ -111,7 +120,7 @@ public class Campeones extends JFrame {
 		
 		JLabel lblTemporada = new JLabel("Temporada");
 		lblTemporada.setFont(new Font("Bahnschrift", Font.PLAIN, 19));
-		lblTemporada.setBounds(204, 18, 107, 20);
+		lblTemporada.setBounds(377, 137, 107, 20);
 		contentPane.add(lblTemporada);
 		
 		btnVolver = new JButton("Volver");
@@ -122,8 +131,14 @@ public class Campeones extends JFrame {
 				Campeones.this.setVisible(false);
 			}
 		});
-		btnVolver.setBounds(325, 207, 88, 29);
+		btnVolver.setBounds(61, 391, 652, 29);
 		contentPane.add(btnVolver);
+		
+		lblCampeones = new JLabel("Campeones");
+		lblCampeones.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 51));
+		lblCampeones.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCampeones.setBounds(240, 36, 268, 57);
+		contentPane.add(lblCampeones);
 		
 		
 		Temporada t = (Temporada) comboBox.getSelectedItem();

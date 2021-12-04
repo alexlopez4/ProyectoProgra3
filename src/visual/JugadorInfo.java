@@ -36,13 +36,12 @@ public class JugadorInfo extends JFrame {
 	 */
 	public JugadorInfo(String split, Usuario user) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 715, 463);
+		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 250, 205));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
-		
 		
 		JLabel lblNombre = new JLabel("Nombre :");
 		lblNombre.setBounds(42, 114, 69, 20);
@@ -69,9 +68,9 @@ public class JugadorInfo extends JFrame {
 		contentPane.add(lblNombre_2);
 		
 		JLabel lblNewLabel = new JLabel("FICHA JUGADOR");
-		lblNewLabel.setFont(new Font("Stencil", Font.PLAIN, 54));
+		lblNewLabel.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 54));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(120, 16, 457, 61);
+		lblNewLabel.setBounds(28, 16, 690, 61);
 		contentPane.add(lblNewLabel);
 		
 		JLabel NOM = new JLabel("New label");

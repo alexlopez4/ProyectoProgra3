@@ -17,6 +17,9 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class TemasForo extends JFrame {
 
@@ -25,10 +28,11 @@ public class TemasForo extends JFrame {
 
 	public TemasForo(Liga liga, Usuario user) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
 		
 		int idLigaABuscar = liga.getIdLiga();
@@ -37,7 +41,8 @@ public class TemasForo extends JFrame {
 				+"ON A.IDLIGA=B.IDLIGA"
 				+" WHERE B.IDLIGA="+idLigaABuscar+";";
 		JList list = new JList();
-		list.setBounds(15, 32, 287, 196);
+		list.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		list.setBounds(33, 122, 437, 334);
 		DefaultListModel<SalaDebate> model = new DefaultListModel<SalaDebate>();
 		ArrayList<SalaDebate> listaDebates = SelectTemas.getTemas(sql, user);
 		for (SalaDebate s: listaDebates){
@@ -57,7 +62,7 @@ public class TemasForo extends JFrame {
 				
 			}
 		});
-		btnNewButton.setBounds(317, 86, 100, 29);
+		btnNewButton.setBounds(521, 263, 228, 29);
 		contentPane.add(btnNewButton);
 		
 		JButton btnAadir = new JButton("A\u00F1adir");
@@ -68,7 +73,7 @@ public class TemasForo extends JFrame {
 				TemasForo.this.setVisible(false);
 			}
 		});
-		btnAadir.setBounds(317, 131, 100, 29);
+		btnAadir.setBounds(521, 320, 228, 29);
 		contentPane.add(btnAadir);
 		
 		JButton btnVolverAln = new JButton("Volver");
@@ -79,8 +84,14 @@ public class TemasForo extends JFrame {
 				TemasForo.this.setVisible(false);
 			}
 		});
-		btnVolverAln.setBounds(317, 176, 100, 29);
+		btnVolverAln.setBounds(521, 375, 228, 29);
 		contentPane.add(btnVolverAln);
+		
+		JLabel lblTemasForo = new JLabel("TEMAS FORO");
+		lblTemasForo.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 50));
+		lblTemasForo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTemasForo.setBounds(33, 34, 716, 60);
+		contentPane.add(lblTemasForo);
 		
 	}
 }
