@@ -21,6 +21,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 public class Menu extends JFrame {
 
@@ -200,6 +201,11 @@ public class Menu extends JFrame {
 		lblFootballPage.setSize(395, 72);
 		lblFootballPage.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 48));
 		contentPane.add(lblFootballPage);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Alumno\\Desktop\\Nueva carpeta (2)\\ProyectoProgra3\\Imagenes\\campo.jpg"));
+		lblNewLabel.setBounds(87, 83, 600, 385);
+		contentPane.add(lblNewLabel);
 		
 }
 }
