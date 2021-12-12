@@ -1,38 +1,26 @@
 package visual;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
+import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JSeparator;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AdminVentana extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtAdmin;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AdminVentana frame = new AdminVentana();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public AdminVentana() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 540);
 		contentPane = new JPanel();
@@ -41,10 +29,86 @@ public class AdminVentana extends JFrame {
 		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
 		
-		txtAdmin = new JTextField();
-		txtAdmin.setText("Admin");
-		txtAdmin.setBounds(132, 62, 146, 26);
-		contentPane.add(txtAdmin);
-		txtAdmin.setColumns(10);
+		JLabel lblAdministrador = new JLabel("Administrador");
+		lblAdministrador.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 64));
+		lblAdministrador.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAdministrador.setBounds(15, 37, 308, 50);
+		contentPane.add(lblAdministrador);
+		
+		
+		JSeparator separator = new JSeparator();
+		JSeparator separator1 = new JSeparator();
+		JSeparator separator2 = new JSeparator();
+		JSeparator separator3 = new JSeparator();
+		JSeparator separator4 = new JSeparator();
+
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(344, 37, 400, 51);
+		contentPane.add(menuBar);
+		
+		JMenu mnNewMenu1 = new JMenu("Ligas");
+		mnNewMenu1.setBackground(new Color(240, 240, 240));
+		mnNewMenu1.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 26));
+		mnNewMenu1.setForeground(SystemColor.desktop);
+		menuBar.add(mnNewMenu1);
+		
+		JMenuItem ligas = new JMenuItem("Lista de ligas");
+		ligas.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
+		ligas.addActionListener(new ActionListener() {
+		      public void actionPerformed(ActionEvent e){
+		      }
+        });
+		mnNewMenu1.add(ligas);
+
+		
+		JMenu mnNewMenu2 = new JMenu("Jugadores");
+		mnNewMenu2.setBackground(new Color(240, 240, 240));
+		mnNewMenu2.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 26));
+		mnNewMenu2.setForeground(SystemColor.desktop);
+		menuBar.add(mnNewMenu2);
+		
+		JMenuItem jugadores = new JMenuItem("Lista de jugadores");
+		jugadores.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
+		jugadores.addActionListener(new ActionListener() {
+		      public void actionPerformed(ActionEvent e){
+		    	  JugadorAdmin a= new JugadorAdmin ();
+		    	  a.setVisible(true);
+		    	  AdminVentana.this.setVisible(false);
+		      }
+        });
+		mnNewMenu2.add(jugadores);
+		
+		JMenu mnNewMenu3 = new JMenu("Usuarios");
+		mnNewMenu3.setBackground(new Color(240, 240, 240));
+		mnNewMenu3.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 26));
+		mnNewMenu3.setForeground(SystemColor.desktop);
+		menuBar.add(mnNewMenu3);
+		
+		
+		
+		JMenuItem usuarios = new JMenuItem("Lista de usuarios");
+		usuarios.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
+		usuarios.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+		    	  UsuariosAdmin pant= new UsuariosAdmin();
+		    	  pant.setVisible(true);
+		    	  AdminVentana.this.setVisible(false);
+		      }
+        });
+		mnNewMenu3.add(usuarios);
+		
+		JMenu mnNewMenu4= new JMenu("Opciones");
+		mnNewMenu4.setBackground(new Color(240, 240, 240));
+		mnNewMenu4.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 26));
+		mnNewMenu4.setForeground(SystemColor.desktop);
+		menuBar.add(mnNewMenu4);
+		
+		JMenuItem cerrar = new JMenuItem("Cerrar programa");
+		cerrar.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
+		cerrar.addActionListener(new ActionListener() {
+		      public void actionPerformed(ActionEvent e){
+		      }
+        });
+		mnNewMenu4.add(cerrar);
 	}
 }
