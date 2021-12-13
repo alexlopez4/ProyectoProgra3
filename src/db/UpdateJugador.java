@@ -22,10 +22,9 @@ public class UpdateJugador {
 	    }
 
 
-    public static void updateJugador(String nombreJugador , int precio , int goles , int ta , int tr , int asist , int idjug )
+    public static void updateJugador(String nombreJugador , int precio )
     {
-        String sql = "UPDATE  SET jugador PRECIOENM = ? WHERE NOMBREJUGADOR = ? AND UPDATE SET estadisticas GOLES = ? ,"
-        		+" ASISTENCIAS = ? , TAREJETASAMARILLAS = ? , TARJETASROJAS = ?  WHERE IDJUGADOR = ?";
+        String sql = "UPDATE  jugador  SET PRECIOENM = ? WHERE NOMBREJUGADOR = ? ";
 
         try
                 (
@@ -35,11 +34,29 @@ public class UpdateJugador {
         {
             pstmt.setInt(1, precio);
             pstmt.setString(2, nombreJugador);
-            pstmt.setInt(3, goles);
-            pstmt.setInt(4, asist);
-            pstmt.setInt(5, ta);
-            pstmt.setInt(6, tr);
-            pstmt.setInt(7, idjug);
+            pstmt.executeUpdate();
+            }
+        catch (SQLException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public static void updateJugadorEstadisticas( int goles , int ta , int tr , int asist , int idjug )
+    {
+        String sql = "UPDATE estadisticas SET  GOLES = ? , ASISTENCIAS = ? , TAREJETASAMARILLAS = ? , TARJETASROJAS = ?  WHERE IDJUGADOR = ?";
+
+        try
+                (
+                        Connection conn = connect();
+                        PreparedStatement pstmt = conn.prepareStatement(sql)
+                )
+        {
+            pstmt.setInt(1, goles);
+            pstmt.setInt(2, asist);
+            pstmt.setInt(3, ta);
+            pstmt.setInt(4, tr);
+            pstmt.setInt(5, idjug);
             
             pstmt.executeUpdate();
             }

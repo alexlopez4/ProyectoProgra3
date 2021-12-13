@@ -1,19 +1,16 @@
 package visual;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import db.SelectEstadisticas;
 import db.SelectTemporada;
+import db.UpdateJugador;
 import objetos.Estadisticas;
 import objetos.Temporada;
-
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
@@ -28,11 +25,11 @@ import java.awt.event.ActionEvent;
 public class JugadorAdminEstadisticas extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField PrecioMillones;
+	private JTextField GolesText;
+	private JTextField TaText;
+	private JTextField TrText;
+	private JTextField AsistText;
 
 	public JugadorAdminEstadisticas(String split) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -114,73 +111,43 @@ public class JugadorAdminEstadisticas extends JFrame {
 		ASIS.setBounds(237, 376, 69, 20);
 		contentPane.add(ASIS);
 		
-		textField = new JTextField();
-		textField.setBounds(377, 171, 146, 26);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		PrecioMillones = new JTextField();
+		PrecioMillones.setBounds(377, 171, 146, 26);
+		contentPane.add(PrecioMillones);
+		PrecioMillones.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(377, 220, 146, 26);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		GolesText = new JTextField();
+		GolesText.setBounds(377, 220, 146, 26);
+		contentPane.add(GolesText);
+		GolesText.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(377, 270, 146, 26);
-		contentPane.add(textField_2);
+		TaText = new JTextField();
+		TaText.setColumns(10);
+		TaText.setBounds(377, 270, 146, 26);
+		contentPane.add(TaText);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(377, 320, 146, 26);
-		contentPane.add(textField_3);
+		TrText = new JTextField();
+		TrText.setColumns(10);
+		TrText.setBounds(377, 320, 146, 26);
+		contentPane.add(TrText);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(377, 373, 146, 26);
-		contentPane.add(textField_4);
+		AsistText = new JTextField();
+		AsistText.setColumns(10);
+		AsistText.setBounds(377, 373, 146, 26);
+		contentPane.add(AsistText);
 		
 		JLabel lblDatosAModificar = new JLabel("Datos a modificar");
 		lblDatosAModificar.setBounds(377, 129, 146, 20);
 		contentPane.add(lblDatosAModificar);
 		
-		JButton btnNewButton = new JButton("Modificar Estadisticas ");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Temporada t = (Temporada) comboBox.getSelectedItem();
-        		String edicion = t.getEdicion();
-        		String sql="SELECT * FROM (SELECT D.IDJUGADOR, D.NOMBREJUGADOR, D.EDADJUGADOR ,D.PRECIOENM, D.IDEQUIPO, D.NOMBREEQUIPO, D.ESTADIO, D.IDLIGA , D.NOMBRELIGA , D.PAIS , D.EDICION ,IDESTADISTICAS, GOLES , ASISTENCIAS, TAREJETASAMARILLAS, TARJETASROJAS FROM estadisticas "
-        				+ " JOIN (SELECT C.IDJUGADOR, C.NOMBREJUGADOR, C.EDADJUGADOR ,C.PRECIOENM, C.IDEQUIPO, C.NOMBREEQUIPO, C.ESTADIO, C.IDLIGA , C.NOMBRELIGA , C.PAIS , EDICION FROM temporada "
-        				+ " JOIN(SELECT IDJUGADOR, NOMBREJUGADOR, EDADJUGADOR ,PRECIOENM, B.IDEQUIPO, B.NOMBREEQUIPO, B.ESTADIO, B.IDLIGA , B.NOMBRELIGA , B.PAIS FROM jugador "
-        				+ " JOIN (SELECT IDEQUIPO, NOMBREEQUIPO, ESTADIO, A.IDLIGA , A.NOMBRELIGA , A.PAIS FROM equipo "
-        				+ " JOIN(SELECT IDLIGA , NOMBRELIGA , PAIS FROM liga) A "
-        				+ " ON A.IDLIGA = equipo.IDLIGA ) B "
-        				+ " ON B.IDEQUIPO= jugador.IDEQUIPO )C"
-        				+ " WHERE EDICION='"+edicion+"')D"
-        				+ " ON estadisticas.IDJUGADOR= D.IDJUGADOR and D.EDICION = estadisticas.EDICION) ";
-        		ArrayList<Estadisticas> listaJugadores= SelectEstadisticas.getEstadisticasJugador(sql);
-        		for (Estadisticas a: listaJugadores){
-        			if (a.getNombre().equals(split)){
-        				NOM.setText(a.getNombre());
-        				ED.setText(String.valueOf(a.getEdad()));
-        				GOL.setText(String.valueOf(a.getGoles()));
-        				ASIS.setText(String.valueOf(a.getAsistencias()));
-        				TA.setText(String.valueOf(a.getTarjetasAmarillas()));
-        				TR.setText(String.valueOf(a.getTarjetasRojas()));
-        				
-        				String nom = a.getNombre();
-        				int valor =a.getPrecioEnMillones();
-        				int gol= a.getGoles();
-        				int asist= a.getAsistencias();
-        				int Ta=a.getTarjetasAmarillas();
-        				int Tr= a.getTarjetasRojas();
-        			
-        			}
-        		}
-			}
-			
-		});
-		btnNewButton.setBounds(565, 249, 198, 29);
-		contentPane.add(btnNewButton);
+		String nom = "";
+		int valor =0;
+		int gol= 0;
+		int asist= 0;
+		int Ta=0;
+		int Tr= 0;
+		int id =0;
+	
 		
 		JButton btnNewButton_1 = new JButton("Volver");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -202,13 +169,14 @@ public class JugadorAdminEstadisticas extends JFrame {
 				ASIS.setText(String.valueOf(a.getAsistencias()));
 				TA.setText(String.valueOf(a.getTarjetasAmarillas()));
 				TR.setText(String.valueOf(a.getTarjetasRojas()));
-				String nom = a.getNombre();
-				int valor =a.getPrecioEnMillones();
-				int gol= a.getGoles();
-				int asist= a.getAsistencias();
-				int Ta=a.getTarjetasAmarillas();
-				int Tr= a.getTarjetasRojas();
-				int id = a.getIdJugador();
+				
+				nom = a.getNombre();
+				valor =a.getPrecioEnMillones();
+				gol= a.getGoles();
+				asist= a.getAsistencias();
+				Ta=a.getTarjetasAmarillas();
+				Tr= a.getTarjetasRojas();
+				id = a.getIdJugador();
 			}
 		}
 		comboBox.addItemListener(new ItemListener(){
@@ -242,10 +210,81 @@ public class JugadorAdminEstadisticas extends JFrame {
             				int asist= a.getAsistencias();
             				int Ta=a.getTarjetasAmarillas();
             				int Tr= a.getTarjetasRojas();
+            				int id= a.getIdJugador();
             			}
             		}
                 }
 	}
-});	}
+});	
+		JButton btnNewButton = new JButton("Modificar Estadisticas ");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Temporada t = (Temporada) comboBox.getSelectedItem();
+        		String edicion = t.getEdicion();
+        		String sql="SELECT * FROM (SELECT D.IDJUGADOR, D.NOMBREJUGADOR, D.EDADJUGADOR ,D.PRECIOENM, D.IDEQUIPO, D.NOMBREEQUIPO, D.ESTADIO, D.IDLIGA , D.NOMBRELIGA , D.PAIS , D.EDICION ,IDESTADISTICAS, GOLES , ASISTENCIAS, TAREJETASAMARILLAS, TARJETASROJAS FROM estadisticas "
+        				+ " JOIN (SELECT C.IDJUGADOR, C.NOMBREJUGADOR, C.EDADJUGADOR ,C.PRECIOENM, C.IDEQUIPO, C.NOMBREEQUIPO, C.ESTADIO, C.IDLIGA , C.NOMBRELIGA , C.PAIS , EDICION FROM temporada "
+        				+ " JOIN(SELECT IDJUGADOR, NOMBREJUGADOR, EDADJUGADOR ,PRECIOENM, B.IDEQUIPO, B.NOMBREEQUIPO, B.ESTADIO, B.IDLIGA , B.NOMBRELIGA , B.PAIS FROM jugador "
+        				+ " JOIN (SELECT IDEQUIPO, NOMBREEQUIPO, ESTADIO, A.IDLIGA , A.NOMBRELIGA , A.PAIS FROM equipo "
+        				+ " JOIN(SELECT IDLIGA , NOMBRELIGA , PAIS FROM liga) A "
+        				+ " ON A.IDLIGA = equipo.IDLIGA ) B "
+        				+ " ON B.IDEQUIPO= jugador.IDEQUIPO )C"
+        				+ " WHERE EDICION='"+edicion+"')D"
+        				+ " ON estadisticas.IDJUGADOR= D.IDJUGADOR and D.EDICION = estadisticas.EDICION) ";
+        		ArrayList<Estadisticas> listaJugadores= SelectEstadisticas.getEstadisticasJugador(sql);
+        		String nom = "";
+        		int valor =0;
+        		int gol= 0;
+        		int asist= 0;
+        		int Ta=0;
+        		int Tr= 0;
+        		int id =0;
+        		for (Estadisticas a: listaJugadores){
+        			if (a.getNombre().equals(split)){
+        				nom = a.getNombre();
+        				id= a.getIdJugador();
+        				if(PrecioMillones.getText().equals("")){
+        					valor =a.getPrecioEnMillones();
+        				}else{
+        					 valor = Integer.parseInt(PrecioMillones.getText());
+        				}
+        				if(GolesText.getText().equals("")){
+        					gol= a.getGoles();
+        				}else{
+        					gol = Integer.parseInt(GolesText.getText());
+        				}
+        				if(AsistText.getText().equals("")){
+        					asist= a.getAsistencias();
+        				}else{
+        					asist = Integer.parseInt(AsistText.getText());
+        				}
+        				if(TaText.getText().equals("")){
+        					Ta=a.getTarjetasAmarillas();
+        				}else{
+        					Ta = Integer.parseInt(TaText.getText());
+        				}
+        				if(TrText.getText().equals("")){
+        					Tr= a.getTarjetasRojas();
+        				}else{
+        					Tr = Integer.parseInt(TrText.getText());
+        				}
+        				
+        			}
+        		}
+        		UpdateJugador.updateJugador(nom, valor);
+        		UpdateJugador.updateJugadorEstadisticas(gol, Ta, Tr, asist, id);
+				ED.setText(String.valueOf(valor));
+				GOL.setText(String.valueOf(gol));
+				ASIS.setText(String.valueOf(asist));
+				TA.setText(String.valueOf(Ta));
+				TR.setText(String.valueOf(Tr));
+			}
+		});
+		
+
+		btnNewButton.setBounds(565, 249, 198, 29);
+		contentPane.add(btnNewButton);
+			
+		
+}
 
 }
