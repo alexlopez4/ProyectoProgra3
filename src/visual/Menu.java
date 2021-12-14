@@ -203,7 +203,7 @@ public class Menu extends JFrame {
 		contentPane.add(lblFootballPage);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Alumno\\Desktop\\Nueva carpeta (2)\\ProyectoProgra3\\Imagenes\\campo.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Alumno\\Desktop\\ProyectoP3\\Proyecto\\Imagenes\\campo.jpg"));
 		lblNewLabel.setBounds(87, 83, 600, 385);
 		contentPane.add(lblNewLabel);
 		

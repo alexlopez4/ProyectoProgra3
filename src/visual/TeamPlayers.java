@@ -107,7 +107,5 @@ public class TeamPlayers extends JFrame {
 		table_1 = new JTable(players);
 		scrollPane.setViewportView(table_1);
 		
-		
-		
 	}
 }

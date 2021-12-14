@@ -96,7 +96,7 @@ public class Campeones extends JFrame {
 		
 		comboBox = new JComboBox();
 		comboBox.setFont(new Font("Bahnschrift", Font.PLAIN, 20));
-		comboBox.setBounds(499, 135, 101, 26);
+		comboBox.setBounds(499, 135, 136, 26);
 		DefaultComboBoxModel<Temporada> modelTemporada = new DefaultComboBoxModel<Temporada>();
 		ArrayList<Temporada> ediciones = SelectTemporada.getTemporada("SELECT EDICION FROM temporada ORDER BY EDICION DESC;");
 		for (Temporada t: ediciones){
@@ -134,10 +134,10 @@ public class Campeones extends JFrame {
 		btnVolver.setBounds(61, 391, 652, 29);
 		contentPane.add(btnVolver);
 		
-		lblCampeones = new JLabel("Campeones");
+		lblCampeones = new JLabel("Datos");
 		lblCampeones.setFont(new Font("Bernard MT Condensed", Font.PLAIN, 51));
 		lblCampeones.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCampeones.setBounds(240, 36, 268, 57);
+		lblCampeones.setBounds(240, 36, 321, 57);
 		contentPane.add(lblCampeones);
 		
 		

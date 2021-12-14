@@ -47,10 +47,8 @@ public class Foro extends JFrame {
 		
 		JTextPane textPane = new JTextPane();
 		textPane.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		textPane.setBounds(15, 111, 531, 280);
 		textPane.setEditable(false);
-		
-		
+	
 		
 		String temaDebate = s.getTemaDebate();
 		int idLiga = s.getLiga().getIdLiga();
@@ -71,7 +69,9 @@ public class Foro extends JFrame {
 		}
 		textPane.setText(texto);
 		
-		contentPane.add(textPane);
+		JScrollPane scrollPane = new JScrollPane(textPane);
+		scrollPane.setBounds(15, 111, 531, 280);
+		contentPane.add(scrollPane);
 		
 		textField = new JTextField();
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 18));

@@ -5,6 +5,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.border.EmptyBorder;
+
+import objetos.Usuario;
+
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -59,7 +62,19 @@ public class AdminVentana extends JFrame {
 		      }
         });
 		mnNewMenu1.add(ligas);
-
+		
+		mnNewMenu1.add(separator);
+		
+		JMenuItem salaDebate = new JMenuItem("Salas de Debate");
+		salaDebate.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
+		salaDebate.addActionListener(new ActionListener() {
+		      public void actionPerformed(ActionEvent e){
+		    	  ForoAdmin1 foros= new ForoAdmin1();
+		    	  foros.setVisible(true);
+		    	  AdminVentana.this.setVisible(false);
+		      }
+        });
+		mnNewMenu1.add(salaDebate);
 		
 		JMenu mnNewMenu2 = new JMenu("Jugadores");
 		mnNewMenu2.setBackground(new Color(240, 240, 240));
