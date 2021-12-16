@@ -57,6 +57,13 @@ public class TemaNuevo extends JFrame {
 		contentPane.add(btnAadir);
 		
 		JButton btnNewButton = new JButton("Volver");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TemasForo tf = new TemasForo(liga,usuario);
+				tf.setVisible(true);
+				TemaNuevo.this.setVisible(false);
+			}
+		});
 		btnNewButton.setBounds(44, 382, 685, 29);
 		contentPane.add(btnNewButton);
 		

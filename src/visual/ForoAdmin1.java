@@ -12,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 import db.DeleteSalaDebate;
 import db.SelectForo;
 import db.SelectTemas;
+import objetos.Liga;
 import objetos.SalaDebate;
 import objetos.Usuario;
 
@@ -72,6 +73,7 @@ public class ForoAdmin1 extends JFrame {
 				int idSalaDebate = ((SalaDebate) list.getSelectedValue()).getIdSalaDebate();
 				DeleteSalaDebate.delete(idSalaDebate);
 				JOptionPane.showMessageDialog(ForoAdmin1.this, "Sala de debate eliminada");
+				modelForos.clear();
 				ArrayList<SalaDebate> listaForos2 = SelectTemas.getTemas(sql, u);
 				for (SalaDebate s: listaForos2){
 						modelForos.addElement(s);
@@ -83,6 +85,18 @@ public class ForoAdmin1 extends JFrame {
 		contentPane.add(btnEliminarTema);
 		
 		JButton btnGestionarMensajes = new JButton("Gestionar mensajes");
+		btnGestionarMensajes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (list.getSelectedValue()==null){
+					JOptionPane.showMessageDialog(ForoAdmin1.this, "Selecciona un foro al que acceder");
+				}else{
+				SalaDebate s = ((SalaDebate)list.getSelectedValue());
+				ForoAdmin2 foroMensajes = new ForoAdmin2(s);
+				foroMensajes.setVisible(true);
+				ForoAdmin1.this.setVisible(false);
+				}
+			}
+		});
 		btnGestionarMensajes.setBounds(581, 296, 182, 34);
 		contentPane.add(btnGestionarMensajes);
 		

@@ -78,7 +78,7 @@ public class Foro extends JFrame {
 		textField.setBounds(15, 407, 531, 42);
 		contentPane.add(textField);
 		textField.setColumns(10);
-		
+
 		JButton btnEnviar = new JButton("Send");
 		btnEnviar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -88,15 +88,14 @@ public class Foro extends JFrame {
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 				String fecha = dtf.format(LocalDateTime.now());
 				InsertNewMessage.insertMensaje(nombreUsuario,idSalaDebate,mensaje,fecha);
-				
 				ArrayList<RegistroMensajes> rm = SelectForo.getForo(sql);
-				String texto ="";
+				String texto="";
 				for (RegistroMensajes message: rm){
 					texto = texto +message.getFecha()+" - " +message.getUser().getNombreDeUsuario()+": " +message.getMensaje()+"\n";
 				}
 				textPane.setText(texto);
-				
-				contentPane.add(textPane);
+				scrollPane.add(textPane);
+				textField.setText("");
 			}
 		});
 		btnEnviar.setBounds(561, 410, 202, 36);

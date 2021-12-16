@@ -72,7 +72,7 @@ public class RegistroMensajes {
 
 	@Override
 	public String toString() {
-		return "RegistroMensajes [user=" + user + ", mensaje=" + mensaje + ", fecha=" + fecha + "]";
+		return fecha+" - " +user.getNombreDeUsuario()+": " +mensaje;
 	}
 	
 	

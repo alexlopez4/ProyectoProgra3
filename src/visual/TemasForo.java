@@ -12,6 +12,7 @@ import objetos.Liga;
 import objetos.SalaDebate;
 import objetos.Usuario;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -54,12 +55,14 @@ public class TemasForo extends JFrame {
 		JButton btnNewButton = new JButton("Ver Tema");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if (list.getSelectedValue()==null){
+					JOptionPane.showMessageDialog(TemasForo.this, "Selecciona un tema");
+				}else{
 				SalaDebate s = (SalaDebate) list.getSelectedValue();
 				Foro f = new Foro (user,s);
 				f.setVisible(true);
 				TemasForo.this.setVisible(false);
-					
-				
+				}
 			}
 		});
 		btnNewButton.setBounds(521, 263, 228, 29);
