@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import db.SelectTemas;
+import objetos.Estadisticas;
 import objetos.Liga;
 import objetos.SalaDebate;
 import objetos.Usuario;
@@ -17,6 +18,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -46,6 +48,7 @@ public class TemasForo extends JFrame {
 		list.setBounds(33, 122, 437, 334);
 		DefaultListModel<SalaDebate> model = new DefaultListModel<SalaDebate>();
 		ArrayList<SalaDebate> listaDebates = SelectTemas.getTemas(sql, user);
+		listaDebates.sort(Comparator.comparing(e -> ((SalaDebate) e).getTemaDebate()));
 		for (SalaDebate s: listaDebates){
 			model.addElement(s);
 		}

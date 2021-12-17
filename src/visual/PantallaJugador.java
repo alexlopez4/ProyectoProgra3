@@ -14,6 +14,7 @@ import db.SelectEstadisticas;
 import db.SelectJugador;
 import objetos.Estadisticas;
 import objetos.Jugador;
+import objetos.Liga;
 import objetos.Usuario;
 
 import javax.swing.JList;
@@ -23,6 +24,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -57,7 +59,7 @@ public class PantallaJugador extends JFrame {
 	
 		
 		ArrayList<Jugador> listaJugadores= SelectJugador.getJugadores(sql);
-		
+		listaJugadores.sort(Comparator.comparing(e -> ((Jugador) e).getNombre()));
 		String texto="";
 		for (Jugador a: listaJugadores){
 			texto="";
@@ -99,7 +101,7 @@ public class PantallaJugador extends JFrame {
 		
 		DefaultListModel  lista2 = new DefaultListModel();
 		
-		String sql2 = "SELECT * FROM (SELECT * FROM (SELECT D.IDJUGADOR, D.NOMBREJUGADOR, D.EDADJUGADOR ,D.PRECIOENM, D.IDEQUIPO, D.NOMBREEQUIPO, D.ESTADIO, D.IDLIGA , D.NOMBRELIGA , D.PAIS , D.EDICION ,IDESTADISTICAS, GOLES , ASISTENCIAS, TAREJETASAMARILLAS ,TARJETASROJAS FROM estadisticas "
+		String sql2 = "SELECT * FROM (SELECT D.IDJUGADOR, D.NOMBREJUGADOR, D.EDADJUGADOR ,D.PRECIOENM, D.IDEQUIPO, D.NOMBREEQUIPO, D.ESTADIO, D.IDLIGA , D.NOMBRELIGA , D.PAIS , D.EDICION ,IDESTADISTICAS, GOLES , ASISTENCIAS, TAREJETASAMARILLAS ,TARJETASROJAS FROM estadisticas "
 				+ "JOIN (SELECT C.IDJUGADOR, C.NOMBREJUGADOR, C.EDADJUGADOR ,C.PRECIOENM, C.IDEQUIPO, C.NOMBREEQUIPO, C.ESTADIO, C.IDLIGA , C.NOMBRELIGA , C.PAIS , EDICION FROM temporada "
 				+ "JOIN(SELECT IDJUGADOR, NOMBREJUGADOR, EDADJUGADOR ,PRECIOENM, B.IDEQUIPO, B.NOMBREEQUIPO, B.ESTADIO, B.IDLIGA , B.NOMBRELIGA , B.PAIS FROM jugador "
 				+ "JOIN (SELECT IDEQUIPO, NOMBREEQUIPO, ESTADIO, A.IDLIGA , A.NOMBRELIGA , A.PAIS FROM equipo "
@@ -107,14 +109,13 @@ public class PantallaJugador extends JFrame {
 				+ "ON A.IDLIGA = equipo.IDLIGA ) B "
 				+ "ON B.IDEQUIPO= jugador.IDEQUIPO )C "
 				+ "WHERE EDICION LIKE '%2021/2022%')D "
-				+ "ON estadisticas.IDJUGADOR= D.IDJUGADOR and D.EDICION = estadisticas.EDICION) "
-				+ "ORDER BY GOLES DESC );";
+				+ "ON estadisticas.IDJUGADOR= D.IDJUGADOR and D.EDICION = estadisticas.EDICION);";
 	
 		
-		ArrayList<Estadisticas> listaJugadores2= SelectEstadisticas.getEstadisticasJugador(sql2);
-		
+		ArrayList<Estadisticas> listaEstadisticas= SelectEstadisticas.getEstadisticasJugador(sql2);
+		listaEstadisticas.sort(Comparator.comparing(e -> ((Estadisticas) e).getGoles()).reversed());
 		String texto2="";
-		for (Estadisticas Z: listaJugadores2){
+		for (Estadisticas Z: listaEstadisticas){
 			texto2="";
 			texto2=Z.getNombre()+" , "+Z.getEdad()+" años "+" , "+Z.getGoles()+" goles.";
 			lista2.addElement(texto2);
@@ -138,7 +139,7 @@ public class PantallaJugador extends JFrame {
 		JList list_2 = new JList();
 		DefaultListModel  lista3 = new DefaultListModel();
 		
-		String sql3 = "SELECT * FROM (SELECT * FROM (SELECT D.IDJUGADOR, D.NOMBREJUGADOR, D.EDADJUGADOR ,D.PRECIOENM, D.IDEQUIPO, D.NOMBREEQUIPO, D.ESTADIO, D.IDLIGA , D.NOMBRELIGA , D.PAIS , D.EDICION ,IDESTADISTICAS, GOLES , ASISTENCIAS, TAREJETASAMARILLAS, TARJETASROJAS FROM estadisticas "
+		String sql3 = "SELECT D.IDJUGADOR, D.NOMBREJUGADOR, D.EDADJUGADOR ,D.PRECIOENM, D.IDEQUIPO, D.NOMBREEQUIPO, D.ESTADIO, D.IDLIGA , D.NOMBRELIGA , D.PAIS , D.EDICION ,IDESTADISTICAS, GOLES , ASISTENCIAS, TAREJETASAMARILLAS, TARJETASROJAS FROM estadisticas "
 				+ " JOIN (SELECT C.IDJUGADOR, C.NOMBREJUGADOR, C.EDADJUGADOR ,C.PRECIOENM, C.IDEQUIPO, C.NOMBREEQUIPO, C.ESTADIO, C.IDLIGA , C.NOMBRELIGA , C.PAIS , EDICION FROM temporada "
 				+ " JOIN(SELECT IDJUGADOR, NOMBREJUGADOR, EDADJUGADOR ,PRECIOENM, B.IDEQUIPO, B.NOMBREEQUIPO, B.ESTADIO, B.IDLIGA , B.NOMBRELIGA , B.PAIS FROM jugador "
 				+ " JOIN (SELECT IDEQUIPO, NOMBREEQUIPO, ESTADIO, A.IDLIGA , A.NOMBRELIGA , A.PAIS FROM equipo "
@@ -146,12 +147,11 @@ public class PantallaJugador extends JFrame {
 				+ " ON A.IDLIGA = equipo.IDLIGA ) B "
 				+ " ON B.IDEQUIPO= jugador.IDEQUIPO )C"
 				+ " WHERE EDICION LIKE '%2021/2022%')D"
-				+ " ON estadisticas.IDJUGADOR= D.IDJUGADOR and D.EDICION = estadisticas.EDICION)"
-				+ " ORDER BY ASISTENCIAS DESC ) ";
+				+ " ON estadisticas.IDJUGADOR= D.IDJUGADOR and D.EDICION = estadisticas.EDICION;";
 	
 		
 		ArrayList<Estadisticas> listaJugadores3= SelectEstadisticas.getEstadisticasJugador(sql3);
-		
+		listaJugadores3.sort(Comparator.comparing(e -> ((Estadisticas) e).getAsistencias()).reversed());
 		String texto3="";
 		for (Estadisticas g: listaJugadores3){
 			texto3="";

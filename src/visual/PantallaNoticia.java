@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import javax.sound.midi.MidiDevice.Info;
 import javax.swing.DefaultListModel;
@@ -21,6 +22,7 @@ import javax.swing.border.EmptyBorder;
 
 import db.SelectLiga;
 import db.SelectNoticia;
+import objetos.Estadisticas;
 import objetos.Liga;
 import objetos.Noticia;
 import objetos.Usuario;
@@ -51,6 +53,7 @@ public class PantallaNoticia extends JFrame {
 	
 		
 		ArrayList <Noticia> listaNoticias = SelectNoticia.getNoticias(sql);
+		listaNoticias.sort(Comparator.comparing(e -> ((Noticia) e).getFecha()));
 		ArrayList<String> info= new ArrayList<String> ();
 		String texto="";
 		for (Noticia a: listaNoticias){

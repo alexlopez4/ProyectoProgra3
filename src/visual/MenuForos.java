@@ -3,10 +3,13 @@ package visual;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import org.omg.Messaging.SyncScopeHelper;
 
 import db.SelectLiga;
 import objetos.Liga;
@@ -44,6 +47,7 @@ public class MenuForos extends JFrame {
 		
 		String consulta= "SELECT IDLIGA, NOMBRELIGA, PAIS FROM liga";
 		ArrayList <Liga> listaLigas = SelectLiga.getLiga(consulta);
+		listaLigas.sort(Comparator.comparing(e -> ((Liga) e).getNombreLiga()));
 		for (Liga l: listaLigas){
 			model.addElement(l);
 		}

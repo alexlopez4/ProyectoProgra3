@@ -3,6 +3,7 @@ package visual;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -13,6 +14,7 @@ import db.SelectJugador;
 import db.SelectLiga;
 import objetos.Equipo;
 import objetos.Liga;
+import objetos.SalaDebate;
 import objetos.Usuario;
 
 import javax.swing.DefaultComboBoxModel;
@@ -49,6 +51,7 @@ public class EquipoAnalisis extends JFrame {
 		DefaultComboBoxModel<Liga> modelLiga = new DefaultComboBoxModel<Liga>();
 		String consulta= "SELECT IDLIGA, NOMBRELIGA, PAIS FROM liga";
 		ArrayList <Liga> listaLigas = SelectLiga.getLiga(consulta);
+		listaLigas.sort(Comparator.comparing(e -> ((Liga) e).getNombreLiga()));
 		for (Liga l: listaLigas){
 			modelLiga.addElement(l);
 		}
@@ -114,6 +117,7 @@ public class EquipoAnalisis extends JFrame {
 				+"JOIN liga "
 				+"ON equipo.IDLIGA=liga.IDLIGA " 
 				+ "WHERE NOMBRELIGA = '"+((Liga) comboBox.getSelectedItem()).getNombreLiga()+"';";
+		
 		ArrayList<Equipo> equipos = SelectEquipo.getEquipo(sql);
 		DefaultListModel<Equipo> modeloLista = new DefaultListModel<Equipo>();
 		for (Equipo e: equipos){
