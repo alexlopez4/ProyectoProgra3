@@ -2,12 +2,13 @@ package objetos;
 
 import java.util.ArrayList;
 
-/** Representa una liga dentro de la aplicación
+
+/** Representa una liga dentro de la aplicación e implementa la interfaz IComparable
  * @author Alex Lopez de Lacalle and Giovanni Locatelli 
  * @version 1.0
  */
 
-public class Liga {
+public class Liga{
 	
 	/** El identificador de la liga
 	 */

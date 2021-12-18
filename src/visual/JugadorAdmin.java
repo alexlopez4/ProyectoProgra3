@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
+import db.DeleteJugador;
 import db.SelectJugador;
 import objetos.Jugador;
 
@@ -36,8 +37,7 @@ public class JugadorAdmin extends JFrame {
 		setContentPane(contentPane);
 		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
-		
-JList list = new JList();
+		JList list = new JList();
 		
 		DefaultListModel  lista = new DefaultListModel();
 		
@@ -88,7 +88,14 @@ JList list = new JList();
 		JButton btnNewButton = new JButton("Eliminar jugador");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+				String selected = (String) list.getSelectedValue();
+				String[]split = selected.split(" , ");
+				int indice =list.getSelectedIndex();
+				for (Jugador a: listaJugadores){
+					if (a.getNombre().equals(split[0]));
+						DeleteJugador.delete(a.getIdJugador(), a.getNombre(),a.getEdad(), a.getPrecioEnMillones(),a.getEquipo());
+						list.remove(indice);
+				}
 			}
 		});
 		btnNewButton.setBounds(425, 227, 303, 29);

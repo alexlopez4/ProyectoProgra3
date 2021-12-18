@@ -1,6 +1,8 @@
 package objetos;
 
 import java.util.ArrayList;
+import Recursividad.I_Comparable;
+
 
 /** Representa las estadisticas de un jugador por cada temporada, hereda de Jugador, ya que las 
  * estadisticas pertenecen a un jugador
@@ -8,7 +10,7 @@ import java.util.ArrayList;
  * @version 1.0
  */
 
-public class Estadisticas extends Jugador{
+public class Estadisticas <T> extends Jugador implements I_Comparable{
 
 	/** Temporada a la que pertenecen las estadisticas
 	 */
@@ -201,6 +203,23 @@ public class Estadisticas extends Jugador{
 				+ ", asistencias=" + asistencias + ", tarjetasAmarillas=" + tarjetasAmarillas + ", tarjetasRojas="
 				+ tarjetasRojas + "]";
 	}
+
 	
+
+	@Override
+	public boolean compareNum(Object o) {
+		if(this.goles >  ((Estadisticas)o).getGoles()){
+			return true;
+		}else return false;
+	}
+
+	@Override
+	public boolean compareStr(Object o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
 	
 }

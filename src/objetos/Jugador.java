@@ -1,5 +1,7 @@
 package objetos;
 
+import java.util.ArrayList;
+
 /** Representa un jugador de un equipo, hereda de persona
  * @author Alex Lopez de Lacalle and Giovanni Locatelli 
  * @version 1.0
@@ -90,7 +92,13 @@ public class Jugador extends Persona{
 		}
 	
 	
-		
+		public static int valorEquipo (ArrayList<Jugador> listaJugadores){
+			int precioEquipo = 0;
+			for (Jugador player: listaJugadores){
+				precioEquipo = precioEquipo + player.getPrecioEnMillones();
+			}
+			return precioEquipo;
+		}
 	
 	
 	@Override

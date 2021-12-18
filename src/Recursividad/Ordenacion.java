@@ -8,8 +8,8 @@ import java.util.Collections;
  * Clase que contiene diferentes algoritmos usados para la ordenación
  * Algorithms are: Merge Sort and Quick Sort (using id numbers to sort elements and name)
  *
- * @author Jon Leiñena  - https://github.com/jonleinena
- * @author Mikel Ferrer - https://github.com/FerreMikel
+ * @author Giovanni Locatelli
+ * @author Alex Lopez Delacalle
  */
 public class Ordenacion {
 
@@ -20,7 +20,7 @@ public class Ordenacion {
      * @param <T>  tipo de los objetos que se van a ordenar
      * @return lista ordenada
      */
-    public static <T extends IComparable<T>> ArrayList<T> mergeSortNum(ArrayList<T> list) {
+    public static <T extends I_Comparable<T>> ArrayList<T> mergeSortNum(ArrayList<T> list) {
         if (list.size() == 1) return list;
         else {
             ArrayList<T> listLeft = new ArrayList<T>(list.subList(0, list.size() / 2));
@@ -43,7 +43,7 @@ public class Ordenacion {
      * @param <T> tipo de los objetos en la lista
      * @return lista fusionada y ordenada
      */
-    public static <T extends IComparable<T>> ArrayList<T> mergeNum(ArrayList<T> a, ArrayList<T> b) {
+    public static <T extends I_Comparable<T>> ArrayList<T> mergeNum(ArrayList<T> a, ArrayList<T> b) {
         ArrayList<T> c = new ArrayList<>();
         while (!a.isEmpty() && !b.isEmpty()) {
             if (a.get(0).compareNum(b.get(0))) {
@@ -72,7 +72,7 @@ public class Ordenacion {
      * @param <T>  tipo de los objetos a ordenar
      * @return lista ordenada
      */
-    public static <T extends IComparable<T>> ArrayList<T> mergeSortStr(ArrayList<T> list) {
+    public static <T extends I_Comparable<T>> ArrayList<T> mergeSortStr(ArrayList<T> list) {
         if (list.size() == 1) return list;
         else {
             ArrayList<T> listLeft = new ArrayList<T>(list.subList(0, list.size() / 2));
@@ -95,7 +95,7 @@ public class Ordenacion {
      * @param <T> tipo de los objetos de la lista
      * @return lista fusionada y ordenada
      */
-    public static <T extends IComparable<T>> ArrayList<T> mergeStr(ArrayList<T> a, ArrayList<T> b) {
+    public static <T extends I_Comparable<T>> ArrayList<T> mergeStr(ArrayList<T> a, ArrayList<T> b) {
         ArrayList<T> c = new ArrayList<>();
         while (!a.isEmpty() && !b.isEmpty()) {
             if (a.get(0).compareStr(b.get(0))) {
@@ -124,7 +124,7 @@ public class Ordenacion {
      * @param high Índice del último elemento
      * @param <E> Tipo de los elementos en el array
      */
-    public static <E extends IComparable<E>> void quicksortStr(ArrayList<E> a, int low, int high) {
+    public static <E extends I_Comparable<E>> void quicksortStr(ArrayList<E> a, int low, int high) {
         if (low < high) {
             int pivotLocation = partition(a, low, high);
             quicksortStr(a, low, pivotLocation);
@@ -139,7 +139,7 @@ public class Ordenacion {
      * @param <E> Tipo de los elementos en el array
      * @return Índice del elemento medio
      */
-    private static <E extends IComparable<E>> int partition(ArrayList<E> a, int low, int high) {
+    private static <E extends I_Comparable<E>> int partition(ArrayList<E> a, int low, int high) {
         E pivot = a.get(low);
         int left = low;
         for (int i = low + 1; i < high; i++) {
