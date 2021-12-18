@@ -57,9 +57,10 @@ public class AdminVentana extends JFrame {
 		
 		JMenuItem ligas = new JMenuItem("Lista de ligas");
 		ligas.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
-		ligas.addActionListener(new ActionListener() {
-		      public void actionPerformed(ActionEvent e){
-		      }
+		ligas.addActionListener(e ->{
+		      LigasAdmin la= new LigasAdmin();
+		      la.setVisible(true);
+		      AdminVentana.this.setVisible(false);
         });
 		mnNewMenu1.add(ligas);
 		
@@ -67,12 +68,11 @@ public class AdminVentana extends JFrame {
 		
 		JMenuItem salaDebate = new JMenuItem("Salas de Debate");
 		salaDebate.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
-		salaDebate.addActionListener(new ActionListener() {
-		      public void actionPerformed(ActionEvent e){
+		salaDebate.addActionListener( e ->{
 		    	  ForoAdmin1 foros= new ForoAdmin1();
 		    	  foros.setVisible(true);
 		    	  AdminVentana.this.setVisible(false);
-		      }
+		      
         });
 		mnNewMenu1.add(salaDebate);
 		
@@ -84,12 +84,11 @@ public class AdminVentana extends JFrame {
 		
 		JMenuItem jugadores = new JMenuItem("Lista de jugadores");
 		jugadores.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
-		jugadores.addActionListener(new ActionListener() {
-		      public void actionPerformed(ActionEvent e){
+		jugadores.addActionListener(e->{
 		    	  JugadorAdmin a= new JugadorAdmin ();
 		    	  a.setVisible(true);
 		    	  AdminVentana.this.setVisible(false);
-		      }
+		      
         });
 		mnNewMenu2.add(jugadores);
 		
@@ -103,12 +102,10 @@ public class AdminVentana extends JFrame {
 		
 		JMenuItem usuarios = new JMenuItem("Lista de usuarios");
 		usuarios.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
-		usuarios.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e){
+		usuarios.addActionListener(e->{
 		    	  UsuariosAdmin pant= new UsuariosAdmin();
 		    	  pant.setVisible(true);
 		    	  AdminVentana.this.setVisible(false);
-		      }
         });
 		mnNewMenu3.add(usuarios);
 		
@@ -120,9 +117,9 @@ public class AdminVentana extends JFrame {
 		
 		JMenuItem cerrar = new JMenuItem("Cerrar programa");
 		cerrar.setFont(new Font("Berlin Sans FB", Font.PLAIN, 22));
-		cerrar.addActionListener(new ActionListener() {
-		      public void actionPerformed(ActionEvent e){
-		      }
+		cerrar.addActionListener(e ->{
+		      AdminVentana.this.setVisible(false);
+		      
         });
 		mnNewMenu4.add(cerrar);
 	}

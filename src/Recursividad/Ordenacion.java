@@ -8,8 +8,8 @@ import java.util.Collections;
  * Clase que contiene diferentes algoritmos usados para la ordenación
  * Algorithms are: Merge Sort and Quick Sort (using id numbers to sort elements and name)
  *
- * @author Jon Leiñena  - https://github.com/jonleinena
- * @author Mikel Ferrer - https://github.com/FerreMikel
+ * @author Giovanni Locatelli
+ * @author Alex Lopez Delacalle
  */
 public class Ordenacion {
 

@@ -71,8 +71,7 @@ public class ForoAdmin2 extends JFrame {
 		contentPane.add(lblGestinMensajesSala);
 		
 		JButton btnNewButton = new JButton("Eliminar mensaje");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnNewButton.addActionListener(e -> {
 				if (list.getSelectedValue()==null){
 					JOptionPane.showMessageDialog(ForoAdmin2.this, "Selecciona el mensaje que desees eliminar");
 				}else{
@@ -86,18 +85,16 @@ public class ForoAdmin2 extends JFrame {
 					}
 					list.setModel(modelMensajes);
 				}
-			}
 		});
 		btnNewButton.setBounds(606, 343, 157, 37);
 		contentPane.add(btnNewButton);
 		
 		JButton btnVolver = new JButton("Volver");
-		btnVolver.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnVolver.addActionListener(e->{
 				ForoAdmin1 temasForo = new ForoAdmin1();
 				temasForo.setVisible(true);
 				ForoAdmin2.this.setVisible(false);
-			}
+			
 		});
 		btnVolver.setBounds(606, 396, 157, 37);
 		contentPane.add(btnVolver);
