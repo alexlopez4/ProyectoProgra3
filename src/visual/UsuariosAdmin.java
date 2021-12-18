@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
+
+import db.DeleteUsuario;
 import db.SelectUser;
 import objetos.Usuario;
 import javax.swing.JList;
@@ -48,7 +50,7 @@ public class UsuariosAdmin extends JFrame {
 				
 			}else{
 				texto="";
-				texto=a.getNombre()+" , "+a.getEdad()+" años , nombreUsuario: " + a.getNombreDeUsuario();
+				texto=a.getNombre()+" , "+a.getEdad()+" años , nombreUsuario:" + a.getNombreDeUsuario();
 				lista.addElement(texto);
 			}
 		}
@@ -62,9 +64,17 @@ public class UsuariosAdmin extends JFrame {
 		JButton btnNewButton = new JButton("Eliminar Usuario");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
+				String selected = (String) list.getSelectedValue();
+				int indice =list.getSelectedIndex();
+				String[]split = selected.split(":");
+				for (Usuario a: listaUsuarios){
+					if (a.getNombreDeUsuario().equals(split[1])){
+						DeleteUsuario.delete(a.getNombreDeUsuario(),a.getNombre(),a.getEdad(), a.getContraseña());
+						list.remove(indice);
+					}
+				}
+				}
+			});
 		btnNewButton.setBounds(457, 207, 279, 29);
 		contentPane.add(btnNewButton);
 		
