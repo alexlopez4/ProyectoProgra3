@@ -1,16 +1,18 @@
 package visual;
 
+/** Jframe donde el usuario puede añadir un tema para poder debatir
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import db.InsertNewForo;
 import objetos.Liga;
 import objetos.Usuario;
-
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JButton;

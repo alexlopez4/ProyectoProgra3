@@ -1,5 +1,10 @@
 package visual;
 
+/** Jframe donde el adminstrador visualiza los difrentes usuarios que contiene la app
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;

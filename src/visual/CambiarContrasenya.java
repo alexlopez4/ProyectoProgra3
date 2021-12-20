@@ -1,7 +1,11 @@
-package visual;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+package visual;
+/** Jframe para cambiar la contraseña
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -78,6 +82,13 @@ public class CambiarContrasenya extends JFrame {
 		contentPane.add(btnConfirmarCambios);
 		
 		JButton btnVolver = new JButton("Volver");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InfoUser infoUsuario = new InfoUser(user);
+				infoUsuario.setVisible(true);
+				CambiarContrasenya.this.setVisible(false);
+			}
+		});
 		btnVolver.setBounds(92, 404, 629, 29);
 		contentPane.add(btnVolver);
 		

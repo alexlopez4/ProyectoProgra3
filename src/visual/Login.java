@@ -1,5 +1,10 @@
 package visual;
 
+/** Jframe de inicio de programa para administrador y usuario
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 

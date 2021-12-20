@@ -1,5 +1,11 @@
 package visual;
 
+/** Jframe para insertar ligas
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 

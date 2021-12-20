@@ -1,4 +1,9 @@
 package visual;
+/** Jframe del adminstrador donde modifica el contenido del foro
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

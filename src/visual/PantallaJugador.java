@@ -1,5 +1,10 @@
 package visual;
 
+/** Jframe donde el usuario visualiza los diferentes jugadores que hay en la aplicación
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 

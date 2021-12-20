@@ -1,5 +1,10 @@
 package visual;
 
+/** Jframe del menu del administrador
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;

@@ -1,5 +1,10 @@
 package visual;
 
+/** Jframe con infromación sobre los campeones de cada liga
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 

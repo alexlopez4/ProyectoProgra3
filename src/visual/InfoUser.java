@@ -1,5 +1,9 @@
 package visual;
 
+/** Jframe donde aparece informacion sobre el usuario
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;

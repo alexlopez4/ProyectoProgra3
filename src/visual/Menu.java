@@ -1,5 +1,10 @@
 package visual;
 
+/** Jframe menu de el usuario 
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -203,7 +208,7 @@ public class Menu extends JFrame {
 		contentPane.add(lblFootballPage);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Alumno\\Desktop\\ProyectoP3\\Proyecto\\Imagenes\\campo.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Alumno\\Desktop\\Nueva carpeta (2)\\ProyectoProgra3\\Imagenes\\campo.jpg"));
 		lblNewLabel.setBounds(87, 83, 600, 385);
 		contentPane.add(lblNewLabel);
 		

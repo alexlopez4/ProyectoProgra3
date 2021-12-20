@@ -1,5 +1,9 @@
 package visual;
 
+/** Jframe donde el usuario visualiza las diferentes noticias sobre fútbol.
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;

@@ -1,5 +1,10 @@
 package visual;
 
+/** Jframe donde el administrador visualiza los jugadores y puede eliminar uno
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 

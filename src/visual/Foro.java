@@ -1,5 +1,10 @@
 package visual;
 
+/** Jframe foro donde los usuarios pueden interactuar
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.util.ArrayList;

@@ -26,6 +26,11 @@ import java.awt.event.ItemListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
+/** Jframe donde el usuario visualiza información sobre el jugador seleccionado
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
+
 public class JugadorInfo extends JFrame {
 
 	private JPanel contentPane;

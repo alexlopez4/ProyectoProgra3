@@ -1,5 +1,9 @@
 package visual;
 
+/** Jframe donde el adminstrador puede modificar las estadisticas del jugador
+ * @author Alex Lopez de Lacalle and Giovanni Locatelli 
+ * @version 1.0
+ */
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
